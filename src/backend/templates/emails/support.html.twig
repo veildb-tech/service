@@ -1,0 +1,7 @@
+{# templates/emails/user/invitation.html.twig #}
+
+<strong>User Name:</strong> {{ user.firstname }} {{ user.lastname }} <br />
+<strong>User Email:</strong> {{ user.email }} <br />
+<strong>Workspace:</strong> {{ workspace.code }} ({{ workspace.name }}) <br />
+<strong>Subject:</strong> {{ subject }} <br />
+<strong>Message:</strong> {{ message | raw }} <br />

@@ -1,0 +1,14 @@
+@tailwind base;
+
+@layer base {
+  .card {
+    @apply bg-dbm-color-white;
+    @apply py-6;
+    @apply rounded-lg;
+    @apply shadow-dbm-1;
+  }
+
+  .card-content {
+    @apply px-7;
+  }
+}

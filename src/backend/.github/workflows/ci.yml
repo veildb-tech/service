@@ -1,0 +1,42 @@
+name: CI
+
+on:
+    push:
+    pull_request:
+
+jobs:
+    lint:
+        name: Docker Lint
+        runs-on: ubuntu-latest
+        steps:
+          - name: Checkout
+            uses: actions/checkout@v3
+          - name: Lint Dockerfile
+            uses: hadolint/hadolint-action@master
+            with:
+                dockerfile: Dockerfile
+                ignore: DL3007,DL3018 # Ignore using latest on mlocati/php-extension-installer & version in apk add
+    build:
+        name: Docker build
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v3
+            - name: Pull images
+              run: docker compose pull
+            - name: Start services
+              run: docker compose up --build -d
+            - name: Wait for services
+              run: |
+                  while status="$(docker inspect --format="{{if .Config.Healthcheck}}{{print .State.Health.Status}}{{end}}" "$(docker compose ps -q php)")"; do
+                    case $status in
+                      starting) sleep 1;;
+                      healthy) exit 0;;
+                      unhealthy) exit 1;;
+                    esac
+                  done
+                  exit 1
+            - name: Check HTTP reachability
+              run: curl http://localhost
+            - name: Check HTTPS reachability
+              run: curl -k https://localhost

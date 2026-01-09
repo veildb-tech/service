@@ -1,0 +1,9 @@
+{
+  "table_ignore": [
+    "role",
+    "position",
+    "department",
+    "attribute",
+    "permission"
+  ]
+}

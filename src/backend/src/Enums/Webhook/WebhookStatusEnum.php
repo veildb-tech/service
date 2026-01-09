@@ -1,0 +1,24 @@
+<?php
+
+declare(strict_types=1);
+
+namespace App\Enums\Webhook;
+
+use App\Enums\ConfigurableEnumInterface;
+use App\Enums\ConfigurableEnumTrait;
+
+enum WebhookStatusEnum: string implements ConfigurableEnumInterface
+{
+    use ConfigurableEnumTrait;
+
+    case ENABLED = 'enabled';
+    case DISABLED = 'disabled';
+
+    public function label(): string
+    {
+        return match($this) {
+            self::ENABLED => 'Enabled',
+            self::DISABLED => 'Disabled',
+        };
+    }
+}

@@ -1,0 +1,19 @@
+@import "typography.css";
+@import "layout.css";
+@import "menu.css";
+@import "breadcrumbs.css";
+@import "containers.css";
+@import "forms.css";
+@import "buttons.css";
+@import "dialogs.css";
+@import "scrollbar.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+#__next {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}

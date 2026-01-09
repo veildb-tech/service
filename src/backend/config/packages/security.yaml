@@ -1,0 +1,84 @@
+security:
+    # https://symfony.com/doc/current/security.html#c-hashing-passwords
+    password_hashers:
+        Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface: 'auto'
+
+    # https://symfony.com/doc/current/security/authenticator_manager.html
+    enable_authenticator_manager: true
+    # https://symfony.com/doc/current/security.html#where-do-users-come-from-user-providers
+    providers:
+        # used to reload user from session & other features (e.g. switch_user)
+        users:
+            entity:
+                class: App\Entity\Workspace\User
+                property: email
+        # used to reload user from session & other features (e.g. switch_user)
+        admin_users:
+            entity:
+                class: App\Entity\Admin\User
+                property: email
+
+    firewalls:
+        dev:
+            pattern: ^/_(profiler|wdt)
+            security: false
+        login:
+            pattern: ^/api/login
+            stateless: true
+            json_login:
+                provider: 'users'
+                check_path: /api/login_check
+                success_handler: lexik_jwt_authentication.handler.authentication_success
+                failure_handler: lexik_jwt_authentication.handler.authentication_failure
+
+
+        api:
+            pattern:   ^/api
+            stateless: true
+            provider: 'users'
+            entry_point: jwt
+            jwt:
+                authenticator: app.security.custom_authenticator_token
+            refresh_jwt:
+                check_path: /api/token/refresh
+
+        graphql:
+            pattern: ^/api/graphql$
+            stateless: true
+            provider: 'users'
+            jwt:
+                authenticator: app.security.custom_authenticator_token
+
+        main:
+            form_login:
+                # "app_login" is the name of the route created previously
+                login_path: app_login
+                check_path: app_login
+                provider: admin_users
+                default_target_path: '%admin_path%'
+            logout:
+                path: app_logout
+            json_login:
+                provider: 'users'
+                check_path: auth # The name in routes.yaml is enough for mapping
+                username_path: email
+                password_path: password
+                success_handler: lexik_jwt_authentication.handler.authentication_success
+                failure_handler: lexik_jwt_authentication.handler.authentication_failure
+                
+    role_hierarchy:
+        DBM_READ: DBM_READ
+        DBM_EDIT: [DBM_READ, DBM_EDIT]
+        DBM_ADMIN: [DBM_ADMIN, DBM_READ, DBM_EDIT]
+        DBM_OWNER: [DBM_OWNER, DBM_ADMIN, DBM_READ, DBM_EDIT]
+    
+    access_control:
+        - { path: ^/api/login,        roles: PUBLIC_ACCESS }
+        - { path: ^/api/token_check,  roles: PUBLIC_ACCESS }
+        - { path: ^/api$,       roles: PUBLIC_ACCESS }
+        - { path: ^/api/graphql,        roles: PUBLIC_ACCESS } # It will be protected by cors
+        - { path: ^/api,        roles: IS_AUTHENTICATED_FULLY }
+        - { path: ^/%admin_path%/login,      roles: PUBLIC_ACCESS }
+        - { path: ^/webhook,      roles: PUBLIC_ACCESS }
+        - { path: ^/register,      roles: IS_AUTHENTICATED_FULLY }
+        - { path: ^/,           roles: IS_AUTHENTICATED_FULLY }

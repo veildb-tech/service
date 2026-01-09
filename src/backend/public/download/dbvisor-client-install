@@ -1,0 +1,158 @@
+#!/bin/sh
+
+set -euo pipefail
+
+app_download_url="https://app.dbvisor.pro/download/db-visor-client-latest.zip"
+app_name="dbvisor"
+app_dir=".dbvisor"
+app_bin_path="$HOME/$app_dir/bin"
+
+function output {
+    style_start=""
+    style_end=""
+    if [ "${2:-}" != "" ]; then
+    case $2 in
+        "success")
+            style_start="\033[0;32m"
+            style_end="\033[0m"
+            ;;
+        "error")
+            style_start="\033[31;31m"
+            style_end="\033[0m"
+            ;;
+        "info"|"warning")
+            style_start="\033[33m"
+            style_end="\033[39m"
+            ;;
+        "heading")
+            style_start="\033[1;33m"
+            style_end="\033[22;39m"
+            ;;
+        "comment")
+            style_start="\033[2m"
+            style_end="\033[22;39m"
+            ;;
+    esac
+    fi
+
+    printf "${style_start}${1}${style_end}\n"
+}
+
+function exit_with_error() {
+    output "+--------------------------------------------------+" "error"
+    output "|                                                  |" "error"
+    output "|              Installation failed                 |" "error"
+    output "|                                                  |" "error"
+    output "+--------------------------------------------------+" "error"
+
+    exit 1
+}
+
+function intro() {
+    output "+--------------------------------------------------+" "heading"
+    output "|                                                  |" "heading"
+    output "|            DB Manager CLI Installer              |" "heading"
+    output "|                                                  |" "heading"
+    output "+--------------------------------------------------+" "heading"
+
+    output "\nChecking environment\n" "heading"
+}
+
+function outro() {
+    output ""
+    output "+--------------------------------------------------+" "success"
+    output "|                                                  |" "success"
+    output "| DB Manager CLI has been installed successfully.  |" "success"
+    output "|                                                  |" "success"
+    output "+--------------------------------------------------+" "success"
+
+    output "\nThank you for using DB Manager!"
+}
+
+function check_php() {
+    if command -v php >/dev/null 2>&1; then
+        output "  [*] PHP is installed" "success"
+    else
+        output "  [ ] ERROR: PHP is required for installation" "error"
+        exit_with_error
+    fi
+}
+
+function check_curl() {
+    if command -v curl >/dev/null 2>&1; then
+        output "  [*] CURL is installed" "success"
+    else
+        output "  [ ] ERROR: CURL is required for installation" "error"
+        exit_with_error
+    fi
+}
+
+function check_zip() {
+    if command -v zip >/dev/null 2>&1; then
+        output "  [*] Zip is installed" "success"
+    else
+        output "  [ ] ERROR: Zip is required for installation" "error"
+        exit_with_error
+    fi
+}
+
+function check_phar() {
+    if [ "$(php -m | grep -c Phar)" != "0" ]; then
+        output "  [*] PHP Extension Phar is installed" "success"
+    else
+        output "  [ ] ERROR: PHP Extension phar installation" "error"
+        exit_with_error
+    fi
+}
+
+function check_openssl() {
+    if [ "$(php -m | grep -c openssl)" != "0" ]; then
+        output "  [*] PHP Extension Openssl is installed" "success"
+    else
+        output "  [ ] ERROR: PHP Extension Openssl is required for installation" "error"
+        exit_with_error
+    fi
+}
+
+function check_iconv() {
+    if [ "$(php -m | grep -c iconv)" != "0" ]; then
+        output "  [*] PHP Extension iconv is installed" "success"
+    else
+        output "  [ ] ERROR: PHP Extension iconv is required for installation" "error"
+        exit_with_error
+    fi
+}
+
+function check_mbstring() {
+    if [ "$(php -m | grep -c mbstring)" != "0" ]; then
+        output "  [*] PHP Extension mbstring is installed" "success"
+    else
+        output "  [ ] ERROR: PHP Extension mbstring is required for installation" "error"
+        exit_with_error
+    fi
+}
+
+function check_shell() {
+    if [ $(which sh) != "" ]; then
+        if [ ! -f $HOME/.profile ]; then
+            touch $HOME/.profile
+        fi
+    fi
+}
+
+function check_requirements() {
+    check_php
+    check_phar
+    check_openssl
+    check_iconv
+    check_mbstring
+    check_curl
+    check_zip
+    check_shell
+}
+
+intro
+check_requirements
+mkdir -p "$app_bin_path"
+curl "$app_download_url" -o /tmp/"$app_name"-tmp.zip && unzip -o /tmp/"$app_name"-tmp.zip -d "$app_bin_path"
+"$app_bin_path/$app_name" install

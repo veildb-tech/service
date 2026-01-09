@@ -1,0 +1,293 @@
+@tailwind base;
+
+@layer base {
+  .body .button-0 {
+    @apply flex;
+    @apply items-center;
+    @apply justify-center;
+    @apply shadow-dbm-1;
+    @apply bg-dbm-color-secondary;
+    @apply px-6;
+    @apply py-2.5;
+    @apply text-dbm-color-primary-dark;
+    @apply text-sm;
+    @apply rounded-lg;
+    @apply font-medium;
+    @apply min-h-[48px];
+  }
+
+  .body .button-0:hover {
+    @apply bg-dbm-color-primary-light;
+    @apply text-dbm-color-white;
+  }
+
+  .body .button-1 {
+    @apply font-medium;
+    @apply !underline;
+    @apply text-sm;
+    @apply text-dbm-color-secondary-light;
+    @apply p-0;
+    @apply py-1;
+  }
+
+  .body .button-1:hover {
+    @apply text-dbm-color-primary-dark;
+  }
+
+  .body .button-2 {
+    @apply font-semibold;
+    @apply text-sm;
+    @apply text-dbm-color-1;
+    @apply p-0;
+  }
+
+  .body .button-2:hover {
+    @apply text-dbm-color-primary-dark;
+  }
+
+  .body .button-3 {
+    @apply text-dbm-color-secondary-light;
+    @apply p-0;
+    @apply min-w-min
+  }
+
+  .body .button-3 svg {
+    @apply text-3xl;
+  }
+
+  .body .button-3:hover {
+    @apply text-dbm-color-primary-dark;
+  }
+
+  .body .button-4 {
+    @apply flex;
+    @apply items-center;
+    @apply justify-center;
+    @apply px-6;
+    @apply py-2.5;
+    @apply text-dbm-color-secondary-light;
+    @apply text-sm;
+    @apply rounded-lg;
+    @apply font-semibold;
+    @apply min-h-[48px];
+    border: inherit;
+    @apply border-dbm-color-secondary-light;
+    @apply border;
+  }
+
+  .body .button-4:hover {
+    @apply text-dbm-color-white;
+    @apply bg-dbm-color-secondary-light;
+  }
+
+  .body .button-5 {
+    @apply flex;
+    @apply items-center;
+    @apply justify-center;
+    @apply px-6;
+    @apply py-2.5;
+    @apply text-dbm-color-primary-dark;
+    @apply border-dbm-color-secondary;
+    @apply bg-dbm-color-secondary;
+    @apply border;
+    @apply text-sm;
+    @apply rounded-lg;
+    @apply font-semibold;
+    @apply min-h-[48px]
+  }
+
+  .body .button-5:hover {
+    @apply bg-dbm-color-primary-light;
+    @apply text-dbm-color-white;
+    @apply border-transparent;
+  }
+
+  .body .button-6 {
+    @apply flex;
+    @apply items-center;
+    @apply justify-center;
+    @apply px-6;
+    @apply py-2.5;
+    @apply text-dbm-color-secondary-light;
+    @apply border-dbm-color-secondary-light;
+    @apply border-solid;
+    @apply border;
+    @apply text-sm;
+    @apply rounded-lg;
+    @apply font-semibold;
+    @apply min-h-[48px]
+  }
+
+  .body .button-6:hover {
+    @apply bg-dbm-color-secondary-light;
+    @apply text-dbm-color-white;
+    @apply border-transparent;
+  }
+
+  .body .button-7 {
+    @apply flex;
+    @apply items-center;
+    @apply justify-center;
+    @apply px-6;
+    @apply py-2.5;
+    @apply text-dbm-color-primary-dark;
+    @apply bg-dbm-color-secondary;
+    @apply text-sm;
+    @apply rounded-lg;
+    @apply font-semibold;
+    @apply min-h-[48px]
+  }
+
+  .body .button-7:hover {
+    @apply bg-dbm-color-primary-light;
+    @apply text-dbm-color-white;
+    @apply border-transparent;
+  }
+
+  .body .button-8 {
+    @apply flex;
+    @apply items-center;
+    @apply justify-center;
+    @apply px-6;
+    @apply py-2.5;
+    @apply text-dbm-color-secondary-light;
+    @apply border-dbm-color-secondary-light;
+    @apply border-solid;
+    @apply border;
+    @apply text-sm;
+    @apply rounded-lg;
+    @apply font-semibold;
+    @apply min-h-[48px];
+    @apply gap-2;
+  }
+
+  .body .button-8:hover {
+    @apply bg-dbm-color-secondary-light;
+    @apply text-dbm-color-white;
+    @apply border-transparent;
+  }
+
+  .body .button-9 {
+    @apply flex;
+    @apply items-center;
+    @apply justify-center;
+    @apply gap-2;
+    @apply bg-dbm-color-white;
+    @apply px-2;
+    @apply py-2.5;
+    @apply text-dbm-color-secondary-light;
+    @apply text-base;
+    @apply rounded-lg;
+    @apply border-2;
+    @apply border-solid;
+    @apply border-dbm-color-secondary-light;
+    @apply font-semibold;
+    @apply min-w-[124px];
+    @apply min-h-[43px];
+  }
+
+  .body .button-9:hover {
+    @apply bg-dbm-color-secondary-light;
+    @apply text-dbm-color-white;
+  }
+
+  .body .button-10 {
+    @apply flex;
+    @apply items-center;
+    @apply justify-center;
+    @apply gap-2;
+    @apply shadow-dbm-1;
+    @apply bg-dbm-color-white;
+    @apply px-6;
+    @apply py-2.5;
+    @apply text-dbm-color-secondary-light;
+    @apply text-base;
+    @apply rounded-lg;
+    @apply font-semibold;
+    @apply min-h-[48px];
+    @apply border-2;
+    @apply border-dbm-color-secondary-light;
+    @apply border-solid;
+  }
+
+  .body .button-10:hover {
+    @apply bg-dbm-color-secondary-light;
+    @apply text-dbm-color-white;
+  }
+
+  .body .button-11 {
+    @apply p-0;
+    @apply w-fit;
+    @apply min-w-fit;
+    @apply absolute;
+    @apply top-[12px];
+    @apply right-[10px];
+  }
+
+  .body .button-11 svg {
+    @apply fill-dbm-color-white;
+    @apply w-[30px];
+    @apply h-[25px];
+  }
+
+  .body .button-11:hover svg {
+    @apply fill-dbm-color-secondary;
+  }
+
+  .body .link-0 {
+    @apply text-dbm-color-primary;
+    @apply text-[13px]/[20px];
+    @apply text-sm;
+    @apply font-medium;
+    @apply hover:text-dbm-color-primary-light;
+  }
+
+  .body .link-1 {
+    @apply flex;
+    @apply w-fit;
+    @apply h-fit;
+    @apply items-center;
+    @apply self-center;
+    @apply text-dbm-color-secondary-light;
+    @apply border-b;
+    @apply border-solid;
+    @apply border-dbm-color-secondary-light;
+    @apply ml-[25px];
+  }
+
+  .body .link-1:hover,
+  .body .link-1:hover svg {
+    @apply border-dbm-color-black;
+    @apply stroke-black;
+  }
+
+  .body .link-1 svg {
+    @apply mr-[5px];
+    @apply stroke-dbm-color-secondary-light;
+    @apply absolute;
+    @apply ml-[-18px];
+  }
+
+  .body button.link-1 {
+    @apply p-0;
+    @apply min-w-0;
+    @apply rounded-none;
+    @apply transition-none;
+  }
+
+  .body button.link-1 svg {
+    @apply relative;
+  }
+
+  .body button.link-1:hover {
+    @apply bg-inherit;
+  }
+
+  .body .with-document-icon.link-1 svg {
+    @apply fill-dbm-color-secondary-light;
+  }
+
+  .body .with-document-icon.link-1:hover svg {
+    @apply fill-dbm-color-black;
+  }
+}

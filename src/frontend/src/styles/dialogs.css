@@ -1,0 +1,13 @@
+@tailwind base;
+
+@layer base {
+  .dialog-0 .MuiPaper-root:not(.MuiAlert-root) {
+    @apply flex;
+    @apply flex-col;
+    @apply py-6;
+  }
+
+  body .MuiPaper-root .dialog-0-content {
+    @apply px-5;
+  }
+}

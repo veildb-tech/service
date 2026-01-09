@@ -1,0 +1,34 @@
+mail:
+    term: mail
+    rule:
+        method: fake
+        value: safeEmail
+phone:
+    term: phone
+    rule:
+        method: fake
+        value: phoneNumber
+password:
+    term: pass
+    rule:
+        method: update
+        value: password
+first_name:
+    column_pattern: '/(first|name)/i'
+    column_pattern_precision: 2
+    rule:
+        method: fake
+        value: firstName
+last_name:
+    column_pattern: '/(last|name)/i'
+    column_pattern_precision: 2
+    rule:
+        method: fake
+        value: lastName
+name:
+    term: name
+    table_pattern: '/(user|employee)/i'
+    table_pattern_precision: 1
+    rule:
+        method: fake
+        value: name

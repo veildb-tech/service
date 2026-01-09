@@ -1,0 +1,35 @@
+{
+  "extends": [
+    "next/core-web-vitals",
+    "airbnb"
+  ],
+  "rules": {
+    "@next/next/no-img-element": "off",
+    "react/jsx-filename-extension": "off",
+    "import/extensions": "off",
+    "import/no-unresolved": "off",
+    "no-underscore-dangle": "off",
+    "react/prop-types": "off",
+    "react/forbid-prop-types": "off",
+    "react/require-default-props": "off",
+    "consistent-return": "off",
+    "react/jsx-props-no-spreading": "off",
+    "react/jsx-no-constructed-context-values": "off",
+    "react/destructuring-assignment": "off",
+    "import/prefer-default-export": "off",
+    "import/no-extraneous-dependencies": "off",
+    "camelcase": "off",
+    "jsx-a11y/label-has-associated-control": "off",
+    "comma-dangle": "off",
+    "no-shadow": "off",
+    "implicit-arrow-linebreak": "off",
+    "no-unused-expressions": "off",
+    "react/no-array-index-key": "off",
+    "no-nested-ternary": "off",
+    "dot-notation": "off",
+    "react/jsx-curly-brace-presence": "off",
+    "prefer-spread": "off",
+    "max-len": ["error", { "code": 150 }]
+  }
+}
+

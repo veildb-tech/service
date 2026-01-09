@@ -1,0 +1,19 @@
+@tailwind base;
+
+::-webkit-scrollbar {
+    @apply w-2.5;
+    @apply h-2.5;
+}
+
+::-webkit-scrollbar-track {
+    @apply bg-dbm-color-primary-light/[.08];
+}
+
+::-webkit-scrollbar-thumb {
+    @apply bg-dbm-color-primary-light;
+    @apply rounded;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    @apply bg-dbm-color-secondary;
+}

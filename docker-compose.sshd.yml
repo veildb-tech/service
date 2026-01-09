@@ -1,0 +1,14 @@
+version: '3.4'
+services:
+  devsshd:
+    image: magedirect/devsshd:v0.6.4
+    stdin_open: true
+    volumes:
+    - ./src/backend/public/download/:/download
+    tty: true
+    ports:
+      - ${SSH_PORT}:22
+    command:
+    - bash
+    - -c
+    - echo 'www:${SSH_PASSWORD}' | chpasswd && /usr/sbin/sshd -D

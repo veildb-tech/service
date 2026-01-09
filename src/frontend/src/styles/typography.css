@@ -1,0 +1,32 @@
+@tailwind base;
+
+@layer base {
+  .body h1,
+  .body h2,
+  .body h3,
+  .body h4 {
+    @apply font-jakarta;
+    @apply font-extrabold;
+  }
+
+  .body h1 {
+    @apply text-3-4xl;
+  }
+
+  .body h4 {
+    @apply text-lg;
+  }
+
+  .body h5 {
+    @apply text-base;
+  }
+
+  .body hr {
+    @apply border-dbm-color-6;
+  }
+
+  .body .sub-heading-0 {
+    @apply text-xs;
+    @apply text-dbm-color-3;
+  }
+}

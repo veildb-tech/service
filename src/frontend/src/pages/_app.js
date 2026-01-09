@@ -1,0 +1,65 @@
+import React, { useEffect } from 'react';
+import Head from 'next/head';
+import { CacheProvider } from '@emotion/react';
+import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
+import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
+import { CssBaseline } from '@mui/material';
+import { ThemeProvider } from '@mui/material/styles';
+import { AuthConsumer, AuthProvider } from 'src/contexts/auth-context';
+import { useNProgress } from 'src/hooks/use-nprogress';
+import { createTheme } from 'src/theme';
+import { createEmotionCache } from 'src/utils/create-emotion-cache';
+import { ApolloProviderWrapper } from 'src/contexts/apollo-context';
+import { CookiesProvider } from 'react-cookie';
+
+import 'simplebar-react/dist/simplebar.min.css';
+import 'src/styles/index.css';
+
+const clientSideEmotionCache = createEmotionCache();
+
+function SplashScreen() {
+  return null;
+}
+
+function App(props) {
+  const { Component, emotionCache = clientSideEmotionCache, pageProps } = props;
+
+  useNProgress();
+
+  const getLayout = Component.getLayout ?? ((page) => page);
+
+  const theme = createTheme();
+
+  useEffect(() => {
+    document.body.classList.add('body');
+  }, []);
+
+  return (
+    <CacheProvider value={emotionCache}>
+      <Head>
+        <title>DB Visor App</title>
+        <meta
+          name="viewport"
+          content="initial-scale=1, width=device-width"
+        />
+      </Head>
+      <LocalizationProvider dateAdapter={AdapterDateFns}>
+        <CookiesProvider>
+          <ApolloProviderWrapper>
+            <AuthProvider>
+              <ThemeProvider theme={theme}>
+                <CssBaseline />
+                <AuthConsumer>
+                  {(auth) =>
+                    (auth.isLoading ? <SplashScreen /> : getLayout(<Component {...pageProps} />))}
+                </AuthConsumer>
+              </ThemeProvider>
+            </AuthProvider>
+          </ApolloProviderWrapper>
+        </CookiesProvider>
+      </LocalizationProvider>
+    </CacheProvider>
+  );
+}
+
+export default App;

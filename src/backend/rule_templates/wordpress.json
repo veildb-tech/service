@@ -1,0 +1,549 @@
+[
+    {
+        "table": "admin_user",
+        "method": "custom",
+        "status": "action_required",
+        "columns": [
+            {
+                "name": "firstname",
+                "index": "admin_user_row_1",
+                "value": "firstName",
+                "method": "fake",
+                "conditionOperator": "and"
+            },
+            {
+                "name": "lastname",
+                "index": "admin_user_row_2",
+                "value": "lastName",
+                "method": "fake",
+                "conditionOperator": "and"
+            },
+            {
+                "name": "email",
+                "index": "admin_user_row_3",
+                "value": "safeEmail",
+                "method": "fake",
+                "conditionOperator": "and"
+            },
+            {
+                "name": "password",
+                "index": "admin_user_row_4",
+                "value": "-",
+                "method": "update"
+            }
+        ]
+    },
+    {
+        "table": "admin_user_session",
+        "method": "truncate",
+        "status": "suggested",
+        "columns": [],
+        "conditionOperator": "and"
+    },
+    {
+        "table": "admin_passwords",
+        "method": "truncate",
+        "status": "suggested",
+        "columns": [],
+        "conditionOperator": "and"
+    },
+    {
+        "table": "amazon_customer",
+        "method": "truncate",
+        "status": "suggested",
+        "columns": [],
+        "conditionOperator": "and"
+    },
+    {
+        "table": "amazon_pending_authorization",
+        "method": "truncate",
+        "status": "suggested",
+        "columns": [],
+        "conditionOperator": "and"
+    },
+    {
+        "table": "amazon_pending_capture",
+        "method": "truncate",
+        "status": "suggested",
+        "columns": [],
+        "conditionOperator": "and"
+    },
+    {
+        "table": "amazon_pending_refund",
+        "method": "truncate",
+        "status": "suggested",
+        "columns": [],
+        "conditionOperator": "and"
+    },
+    {
+        "table": "cache",
+        "method": "truncate",
+        "status": "suggested",
+        "columns": [],
+        "conditionOperator": "and"
+    },
+    {
+        "table": "cache_tag",
+        "method": "truncate",
+        "status": "suggested",
+        "columns": [],
+        "conditionOperator": "and"
+    },
+    {
+        "table": "company",
+        "method": "custom",
+        "status": "suggested",
+        "columns": [
+            {
+                "name": "company_name",
+                "index": "company_row_1",
+                "value": "company",
+                "method": "fake"
+            },
+            {
+                "name": "legal_name",
+                "index": "company_row_2",
+                "value": "word",
+                "method": "fake"
+            },
+            {
+                "name": "company_email",
+                "index": "company_row_3",
+                "value": "safeEmail",
+                "method": "fake"
+            },
+            {
+                "name": "vat_tax_id",
+                "index": "company_row_4",
+                "value": "123456789",
+                "method": "update"
+            },
+            {
+                "name": "street",
+                "index": "company_row_5",
+                "value": "word",
+                "method": "fake"
+            },
+            {
+                "name": "telephone",
+                "index": "company_row_6",
+                "value": "phoneNumber",
+                "method": "fake"
+            }
+        ]
+    },
+    {
+        "table": "company_payment",
+        "method": "truncate",
+        "status": "suggested",
+        "columns": [],
+        "conditionOperator": "and"
+    },
+    {
+        "table": "customer_address_entity",
+        "method": "custom",
+        "status": "suggested",
+        "columns": [
+            {
+                "name": "city",
+                "index": "customer_address_entity_row_1",
+                "value": "word",
+                "method": "fake"
+            },
+            {
+                "name": "firstname",
+                "index": "customer_address_entity_row_2",
+                "value": "firstName",
+                "method": "fake"
+            },
+            {
+                "name": "lastname",
+                "index": "customer_address_entity_row_3",
+                "value": "lastName",
+                "method": "fake"
+            },
+            {
+                "name": "street",
+                "index": "customer_address_entity_row_4",
+                "value": "word",
+                "method": "fake"
+            },
+            {
+                "name": "telephone",
+                "index": "customer_address_entity_row_5",
+                "value": "phoneNumber",
+                "method": "fake"
+            },
+            {
+                "name": "fax",
+                "index": "customer_address_entity_row_6",
+                "value": "phoneNumber",
+                "method": "fake"
+            }
+        ]
+    },
+    {
+        "table": "customer_entity",
+        "method": "custom",
+        "status": "suggested",
+        "columns": [
+            {
+                "name": "email",
+                "index": "customer_entity_row_1",
+                "value": "safeEmail",
+                "method": "fake"
+            },
+            {
+                "name": "firstname",
+                "index": "customer_entity_row_2",
+                "value": "firstName",
+                "method": "fake"
+            },
+            {
+                "name": "lastname",
+                "index": "customer_entity_row_3",
+                "value": "lastName",
+                "method": "fake"
+            },
+            {
+                "name": "taxvat",
+                "index": "customer_entity_row_4",
+                "value": "123456789",
+                "method": "update"
+            }
+        ]
+    },
+    {
+        "table": "customer_grid_flat",
+        "method": "truncate",
+        "status": "suggested",
+        "columns": [],
+        "conditionOperator": "and"
+    },
+    {
+        "table": "customer_log",
+        "method": "truncate",
+        "status": "suggested",
+        "columns": [],
+        "conditionOperator": "and"
+    },
+    {
+        "table": "email_contact",
+        "method": "custom",
+        "status": "suggested",
+        "columns": [
+            {
+                "name": "email",
+                "index": "email_contact_row_1",
+                "value": "safeEmail",
+                "method": "fake"
+            },
+            {
+                "name": "firstname",
+                "index": "email_contact_row_2",
+                "value": "firstName",
+                "method": "fake"
+            }
+        ]
+    },
+    {
+        "table": "magento_giftcardaccount",
+        "method": "custom",
+        "status": "suggested",
+        "columns": [
+            {
+                "name": "code",
+                "index": "magento_giftcardaccount_row_1",
+                "value": "numberBetween",
+                "method": "fake",
+                "options": {
+                    "int1": "10000",
+                    "int2": "99999"
+                }
+            }
+        ]
+    },
+    {
+        "table": "magento_invitation",
+        "method": "truncate",
+        "status": "suggested",
+        "columns": [],
+        "conditionOperator": "and"
+    },
+    {
+        "table": "magento_invitation_status_history",
+        "method": "truncate",
+        "status": "suggested",
+        "columns": [],
+        "conditionOperator": "and"
+    },
+    {
+        "table": "magento_invitation_track",
+        "method": "truncate",
+        "status": "suggested",
+        "columns": [],
+        "conditionOperator": "and"
+    },
+    {
+        "table": "magento_login_as_customer_log",
+        "method": "truncate",
+        "status": "suggested",
+        "columns": [],
+        "conditionOperator": "and"
+    },
+    {
+        "table": "oauth_consumer",
+        "method": "truncate",
+        "status": "suggested",
+        "columns": [],
+        "conditionOperator": "and"
+    },
+    {
+        "table": "oauth_nonce",
+        "method": "truncate",
+        "status": "suggested",
+        "columns": [],
+        "conditionOperator": "and"
+    },
+    {
+        "table": "oauth_token",
+        "method": "truncate",
+        "status": "suggested",
+        "columns": [],
+        "conditionOperator": "and"
+    },
+    {
+        "table": "oauth_token_request_log",
+        "method": "truncate",
+        "status": "suggested",
+        "columns": [],
+        "conditionOperator": "and"
+    },
+    {
+        "table": "paypal_cert",
+        "method": "truncate",
+        "status": "suggested",
+        "columns": [],
+        "conditionOperator": "and"
+    },
+    {
+        "table": "paypal_billing_agreement",
+        "method": "truncate",
+        "status": "suggested",
+        "columns": [],
+        "conditionOperator": "and"
+    },
+    {
+        "table": "paypal_billing_agreement_order",
+        "method": "truncate",
+        "status": "suggested",
+        "columns": [],
+        "conditionOperator": "and"
+    },
+    {
+        "table": "paypal_payment_transaction",
+        "method": "truncate",
+        "status": "suggested",
+        "columns": [],
+        "conditionOperator": "and"
+    },
+    {
+        "table": "paypal_settlement_report",
+        "method": "truncate",
+        "status": "suggested",
+        "columns": [],
+        "conditionOperator": "and"
+    },
+    {
+        "table": "paypal_settlement_report_row",
+        "method": "truncate",
+        "status": "suggested",
+        "columns": [],
+        "conditionOperator": "and"
+    },
+    {
+        "table": "quote_address",
+        "method": "custom",
+        "status": "suggested",
+        "columns": [
+            {
+                "name": "email",
+                "index": "quote_address_row_1",
+                "value": "safeEmail",
+                "method": "fake"
+            },
+            {
+                "name": "firstname",
+                "index": "quote_address_row_2",
+                "value": "firstName",
+                "method": "fake"
+            },
+            {
+                "name": "lastname",
+                "index": "quote_address_row_3",
+                "value": "lastName",
+                "method": "fake"
+            },
+            {
+                "name": "company",
+                "index": "quote_address_row_4",
+                "value": "company",
+                "method": "fake"
+            },
+            {
+                "name": "street",
+                "index": "quote_address_row_5",
+                "value": "word",
+                "method": "fake"
+            },
+            {
+                "name": "telephone",
+                "index": "quote_address_row_6",
+                "value": "phoneNumber",
+                "method": "fake"
+            },
+            {
+                "name": "fax",
+                "index": "quote_address_row_7",
+                "value": "phoneNumber",
+                "method": "fake"
+            }
+        ]
+    },
+    {
+        "table": "sales_invoice",
+        "method": "custom",
+        "status": "suggested",
+        "columns": [
+            {
+                "name": "customer_note",
+                "index": "sales_invoice_row_1",
+                "value": "sentence",
+                "method": "fake"
+            }
+        ]
+    },
+    {
+        "table": "sales_order",
+        "method": "custom",
+        "status": "suggested",
+        "columns": [
+            {
+                "name": "customer_email",
+                "index": "sales_order_row_1",
+                "value": "safeEmail",
+                "method": "fake"
+            },
+            {
+                "name": "customer_firstname",
+                "index": "sales_order_row_2",
+                "value": "firstName",
+                "method": "fake"
+            },
+            {
+                "name": "customer_lastname",
+                "index": "sales_order_row_3",
+                "value": "lastName",
+                "method": "fake"
+            },
+            {
+                "name": "customer_taxvat",
+                "index": "sales_order_row_4",
+                "value": "123456789",
+                "method": "update"
+            },
+            {
+                "name": "remote_ip",
+                "index": "sales_order_row_5",
+                "value": "127.0.0.1",
+                "method": "update"
+            },
+            {
+                "name": "customer_note",
+                "index": "sales_order_row_6",
+                "value": "paragraph",
+                "method": "fake"
+            }
+        ]
+    },
+    {
+        "table": "sales_order_address",
+        "method": "custom",
+        "status": "suggested",
+        "columns": [
+            {
+                "name": "lastname",
+                "index": "sales_order_address_row_1",
+                "value": "lastName",
+                "method": "fake"
+            },
+            {
+                "name": "street",
+                "index": "sales_order_address_row_2",
+                "value": "word",
+                "method": "fake"
+            },
+            {
+                "name": "firstname",
+                "index": "sales_order_address_row_3",
+                "value": "firstName",
+                "method": "fake"
+            },
+            {
+                "name": "telephone",
+                "index": "sales_order_address_row_4",
+                "value": "phoneNumber",
+                "method": "fake"
+            },
+            {
+                "name": "company",
+                "index": "sales_order_address_row_5",
+                "value": "company",
+                "method": "fake"
+            },
+            {
+                "name": "email",
+                "index": "sales_order_address_row_6",
+                "value": "safeEmail",
+                "method": "fake"
+            }
+        ]
+    },
+    {
+        "table": "sales_order_grid",
+        "method": "custom",
+        "status": "suggested",
+        "columns": [
+            {
+                "name": "billing_address",
+                "index": "sales_order_grid_row_1",
+                "value": "sentence",
+                "method": "fake"
+            },
+            {
+                "name": "shipping_address",
+                "index": "sales_order_grid_row_2",
+                "value": "sentence",
+                "method": "fake"
+            },
+            {
+                "name": "billing_name",
+                "index": "sales_order_grid_row_3",
+                "value": "name",
+                "method": "fake"
+            },
+            {
+                "name": "shipping_name",
+                "index": "sales_order_grid_row_4",
+                "value": "name",
+                "method": "fake"
+            },
+            {
+                "name": "customer_email",
+                "index": "sales_order_grid_row_5",
+                "value": "safeEmail",
+                "method": "fake"
+            }
+        ]
+    }
+]

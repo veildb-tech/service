@@ -1,0 +1,383 @@
+@tailwind base;
+
+@layer base {
+  table.table-0 {
+    @apply border-separate;
+    @apply border-spacing-0;
+    @apply shadow-dbm-1;
+    @apply rounded-lg;
+  }
+
+  .body .table-0 th {
+    @apply bg-dbm-color-primary-light;
+    @apply text-dbm-color-white;
+    @apply font-semibold;
+    @apply border-t;
+    @apply leading-[29px];
+    @apply tracking-normal;
+  }
+
+  .table-0 th,
+  .table-0 td {
+    @apply border-dbm-color-6;
+  }
+
+  .table-0 th,
+  .table-0 tbody td {
+    @apply px-4;
+    @apply py-1;
+  }
+
+  .table-0 tfoot {
+    @apply rounded-lg;
+  }
+
+  .table-0 .MuiTablePagination-toolbar *:not(svg, button) {
+    @apply text-dbm-color-primary-light;
+    @apply font-normal;
+    @apply py-0;
+  }
+
+  .table-0 tfoot .MuiTablePagination-toolbar {
+    @apply p-0;
+    @apply min-h-max;
+  }
+
+  .table-0 tfoot td {
+    @apply p-4;
+  }
+
+  .table-0 tbody td,
+  .table-0 tfoot td {
+    @apply text-dbm-color-primary-light;
+    @apply font-normal;
+    @apply leading-[39px];
+  }
+
+  .table-0 tr td:first-child,
+  .table-0 th:first-child {
+    @apply border-l;
+    @apply border-dbm-color-6;
+  }
+
+  .table-0 tr td:last-child,
+  .table-0 th:last-child {
+    @apply border-r;
+  }
+
+  .table-0 tr:last-child td {
+    @apply border-b;
+  }
+
+  .table-0 tr:nth-child(even) {
+    @apply bg-dbm-color-10;
+  }
+
+  .table-0 tr:first-child th:first-child {
+    @apply rounded-tl-lg;
+  }
+
+  .table-0 tr:first-child th:last-child {
+    @apply rounded-tr-lg;
+  }
+
+  .table-0 tfoot tr:last-child td:first-child {
+    @apply rounded-bl-lg;
+  }
+
+  .table-0 tfoot tr:last-child td:last-child {
+    @apply py-2;
+    @apply rounded-br-lg;
+  }
+
+  .table-0.MuiTable-stickyHeader thead th {
+    @apply z-40;
+  }
+
+  .chip-items-0 {
+    @apply flex;
+    @apply items-center;
+    @apply flex-wrap;
+    @apply gap-1;
+  }
+
+  .chip-item-0 {
+    @apply px-5;
+    @apply py-1.5;
+    @apply bg-dbm-color-13;
+    @apply text-dbm-color-primary;
+    @apply text-xs;
+    @apply font-bold;
+    @apply rounded-xl;
+  }
+
+  .chip-items-1 {
+    @apply flex;
+    @apply items-center;
+    @apply flex-wrap;
+    @apply gap-1;
+  }
+
+  .chip-item-1 {
+    @apply px-1;
+    @apply py-0.5;
+    @apply bg-dbm-color-13;
+    @apply text-dbm-color-primary-dark;
+    @apply text-sm;
+    @apply font-medium;
+    @apply rounded;
+  }
+
+  .body .select-0 {
+    @apply bg-dbm-color-13;
+    @apply rounded-lg;
+    @apply pt-[7px];
+  }
+
+  .body .select-0 label {
+    @apply static;
+    @apply !transform-none;
+    @apply font-medium;
+    @apply text-xxs;
+    @apply text-dbm-color-15;
+    @apply pl-4;
+  }
+
+  .body .select-0 .MuiInput-root:before,
+  .body .select-0 .MuiInput-root:after {
+    @apply hidden;
+  }
+
+  .body .select-0 .MuiInputBase-input {
+    @apply bg-dbm-color-13;
+  }
+
+  .body .select-0 .MuiInput-root {
+    @apply mt-0;
+    @apply static;
+  }
+
+  .body .select-0 .MuiSelect-select {
+    @apply text-sm;
+    @apply !px-[16px];
+    @apply rounded-[0.5rem];
+  }
+
+  .body .select-0 .MuiSvgIcon-root {
+    @apply top-1/2;
+    @apply -translate-y-2/4;
+    @apply right-5;
+  }
+
+  .body .select-1 {
+    @apply flex;
+    @apply flex-row;
+    @apply items-center;
+    @apply gap-2;
+  }
+
+  .body .select-1 .MuiFormLabel-root {
+    @apply static;
+    @apply !transform-none;
+    @apply cursor-pointer;
+    @apply text-sm;
+    @apply text-dbm-color-primary-dark;
+  }
+
+  .body .select-1 .MuiInput-root {
+    @apply m-0;
+  }
+
+  .body .select-1 .MuiInput-root:before,
+  .body .select-1 .MuiInput-root:after {
+    @apply hidden;
+  }
+
+  .body .select-1 .MuiInput-input {
+    @apply !py-0;
+    @apply bg-transparent;
+    @apply text-sm;
+    @apply text-dbm-color-primary;
+    @apply min-h-0;
+  }
+
+  .body .select-1 .MuiSelect-icon {
+    @apply text-dbm-color-primary;
+  }
+
+  .body .select-1 .MuiSelect-nativeInput {
+    @apply text-sm;
+  }
+
+  .multiselect-0 {
+    @apply min-h-[48px];
+    @apply !bg-dbm-color-8;
+  }
+
+  .multiselect-0 .MuiSelect-multiple {
+    @apply py-2.5;
+    @apply !px-4;
+  }
+
+  .multiselect-0 > fieldset {
+    @apply !border-0;
+  }
+
+  .multiselect-0-placeholder {
+    @apply text-dbm-color-9;
+    @apply text-sm;
+    @apply font-medium;
+  }
+
+  .body .multiselect-1 {
+    @apply min-h-[48px];
+    @apply !bg-dbm-color-13;
+  }
+
+  .body .multiselect-1 fieldset {
+    @apply !border-0;
+  }
+
+  .body .multiselect-1 .MuiInput-root {
+    @apply mt-0;
+    @apply static;
+  }
+
+  .body .multiselect-1 .MuiSelect-select {
+    @apply flex;
+    @apply flex-col;
+    @apply justify-center;
+    @apply text-sm;
+    @apply !px-4;
+    @apply !py-1;
+    @apply bg-dbm-color-13;
+  }
+
+  .body .multiselect-1 .MuiSvgIcon-root {
+    @apply top-1/2;
+    @apply -translate-y-2/4;
+    @apply right-5;
+  }
+
+  .body .multiselect-1-top-label {
+    @apply text-xxs;
+  }
+
+  .body .MuiInputBase-root {
+    @apply border-0;
+  }
+
+  .body .input-0 input {
+    @apply bg-dbm-color-13;
+    @apply rounded-lg;
+    @apply px-4;
+    @apply py-3.5;
+    @apply text-sm;
+    @apply font-medium;
+    @apply text-dbm-color-primary-dark;
+    @apply min-h-[48px];
+    @apply box-border;
+  }
+
+  .body .input-0 label[data-shrink=false] + .MuiInputBase-formControl input::placeholder {
+    @apply text-dbm-color-primary-dark;
+    @apply text-sm;
+    @apply font-medium;
+    @apply !opacity-100;
+  }
+
+  .body .input-0 .MuiFormLabel-filled + .MuiFilledInput-root input,
+  .body .input-0 .Mui-focused input {
+    @apply pt-6;
+  }
+
+  .body .input-0 .Mui-focused input::placeholder {
+    @apply text-transparent;
+  }
+
+  .body .input-0 label {
+    @apply pl-1;
+    @apply text-xxs;
+    @apply text-dbm-color-15;
+  }
+
+  .body .input-0 label.Mui-disabled {
+    @apply opacity-50;
+  }
+
+  .body .input-0 label:not(.MuiFormLabel-filled, .Mui-focused) {
+    @apply hidden;
+  }
+
+  .body .input-0:disabled {
+    @apply opacity-70
+  }
+
+  .body .input-1 {
+    @apply flex;
+    @apply flex-row;
+    @apply bg-dbm-color-13;
+    @apply rounded-lg;
+    @apply p-0;
+    @apply text-sm;
+    @apply font-medium;
+    @apply text-dbm-color-15;
+    @apply min-h-[35px];
+    @apply box-border;
+    @apply gap-1
+  }
+
+  .body .input-1 .MuiInputBase-root {
+    @apply shadow-none;
+    @apply bg-transparent;
+  }
+
+  .body .input-1 .MuiInputLabel-root {
+    @apply flex;
+    @apply items-center;
+    @apply static;
+    @apply min-w-max;
+    @apply !transform-none;
+    @apply pointer-events-auto;
+    @apply cursor-pointer;
+    @apply text-sm;
+    @apply text-dbm-color-primary-dark;
+    @apply pl-3;
+  }
+
+  .body .input-1 .MuiInputBase-input {
+    @apply p-0;
+    @apply h-auto;
+    @apply bg-none;
+    @apply text-dbm-color-primary;
+  }
+
+  .body .input-1 .MuiSvgIcon-root {
+    @apply pointer-events-none;
+    @apply text-dbm-color-primary-dark;
+  }
+
+  .body .input-2 input {
+    @apply bg-transparent;
+    @apply rounded-lg;
+    @apply text-sm;
+    @apply font-medium;
+    @apply text-dbm-color-15;
+    @apply min-h-[48px];
+    @apply box-border;
+    @apply border;
+    @apply border-dbm-color-6;
+    @apply border-solid;
+  }
+
+  .body .input-2 label {
+      @apply translate-y-[14px];
+      @apply translate-x-[16px];
+      @apply font-normal;
+      @apply text-sm;
+  }
+
+  .body .input-2 label.Mui-focused:not(.Mui-error) {
+    @apply text-dbm-color-secondary;
+  }
+}

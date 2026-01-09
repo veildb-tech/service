@@ -1,0 +1,47 @@
+{# templates/emails/user/invitation.html.twig #}
+{% apply inline_css(source('@styles/email.css')) %}
+    <div role="article" class="email-container" aria-roledescription="email" lang="en">
+        <table role="presentation" class="email-table-wrapper">
+            <tr>
+                <td align="center" style="padding:0;">
+                    <table role="presentation" align="center" style="width:600px;">
+                        <tr>
+                            <td>
+                                <table role="presentation" class="email-table-content">
+                                    {{ include('emails/include/header.html.twig') }}
+                                    <tr>
+                                        <td style="padding:30px; padding-bottom: 0px; background-color:#ffffff;">
+                                            <h1 class="email-heading">You have been invited to join {{ workspace.name }} workspace!</h1>
+                                            <p style="margin:0;">{{ user.firstname }} {{ user.lastname }} ( <a href="mailto:{{ user.email }}">{{ user.email }}</a>) invited you to join <strong>{{ workspace.name }}</strong> workspace on DB Visor.</p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="email-content-wrapper" align="center">
+                                            <table role="presentation">
+                                                <tr>
+                                                    <td>
+                                                        <p style="margin:0;">
+                                                            <a href="{{ url }}" class="email-button">
+                                                                <span style="font-weight:bold; font-size: 14px;">Join</span>
+                                                            </a>
+                                                        </p>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding:30px;background-color:#ffffff;">
+                                            <p style="margin:0;">or copy and paste this URL into your browser: <a href="{{ url }}">{{ url }}</a></p>
+                                        </td>
+                                    </tr>
+                                    {{ include('emails/include/footer.html.twig') }}
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </div>
+{% endapply %}

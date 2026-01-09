@@ -1,0 +1,25 @@
+@tailwind base;
+
+@layer base {
+  .breadcrumbs {
+    @apply flex;
+    @apply gap-1.5;
+  }
+
+  .breadcrumb {
+    @apply flex;
+    @apply gap-1.5;
+    @apply text-xs;
+    @apply text-dbm-color-3;
+    @apply font-medium;
+  }
+
+  .breadcrumb:not(:first-child):before {
+    @apply content-['/']
+  }
+
+  .breadcrumb-active {
+    @apply text-dbm-color-primary-dark;
+    @apply pointer-events-none;
+  }
+}

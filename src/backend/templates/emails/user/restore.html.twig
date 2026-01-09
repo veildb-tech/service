@@ -1,0 +1,46 @@
+{# templates/emails/user/restore.html.twig #}
+{% apply inline_css(source('@styles/email.css')) %}
+    <div role="article" class="email-container" aria-roledescription="email" lang="en">
+        <table role="presentation" class="email-table-wrapper">
+            <tr>
+                <td align="center" style="padding:0;">
+                    <table role="presentation" align="center" style="width:600px;">
+                        <tr>
+                            <td>
+                                <table role="presentation" class="email-table-content">
+                                    {{ include('emails/include/header.html.twig') }}
+                                    <tr>
+                                        <td style="padding:30px; padding-bottom: 0px; background-color:#ffffff;">
+                                            <h1 class="email-heading">Reset your password!</h1>
+                                            <p style="margin:0;">Hello,</p>
+                                            <p>Click button below to set a new password for your dbvisor account</p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="email-content-wrapper" align="center">
+                                            <table role="presentation">
+                                                <tr>
+                                                    <td>
+                                                        <p style="margin:0; font-size: 14px;">
+                                                            <a href="{{ url }}" class="email-button">Restore password</a>
+                                                        </p>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding:30px;background-color:#ffffff;">
+                                            <p style="margin:0;">This link will be expired after {{ expiredPeriod }} minutes.</p>
+                                        </td>
+                                    </tr>
+                                    {{ include('emails/include/footer.html.twig') }}
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </div>
+{% endapply %}

@@ -1,0 +1,35 @@
+@tailwind base;
+
+@layer base {
+  main {
+    @apply flex;
+    @apply flex-col;
+    @apply w-full;
+    @apply max-w-screen-xl;
+    @apply mx-auto;
+    @apply px-10;
+    @apply pb-5;
+  }
+
+  main.full-width {
+    @apply max-w-full;
+    @apply p-0;
+  }
+
+  .gradient {
+    background: linear-gradient(243.56deg, #F5F6F8 27.54%, #F6F7F9 57.7%,
+    #E3EEF6 80.45%, #F4EEEE 101.59%);
+  }
+
+  .overview-page-total-card {
+    @apply flex;
+    @apply p-[16px];
+    @apply bg-dbm-color-white;
+    @apply ml-[16px];
+    @apply first:ml-0;
+    @apply max-w-[250px];
+    @apply w-full;
+    @apply shadow-dbm-3;
+    @apply rounded-lg;
+  }
+}
