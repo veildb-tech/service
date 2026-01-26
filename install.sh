@@ -115,7 +115,10 @@ echo ""
 
 # Step 4: Install backend dependencies
 echo -e "${YELLOW}[4/6] Installing backend dependencies (Composer)...${NC}"
-docker compose exec -T php composer install --no-interaction --prefer-dist --optimize-autoloader
+# Run composer as root to avoid permission issues, then fix ownership
+docker compose exec -T --user root php composer install --no-interaction --prefer-dist --optimize-autoloader
+# Fix ownership of vendor directory to www user
+docker compose exec -T --user root php sh -c "chown -R www:www /var/www/vendor /var/www/var 2>/dev/null || true"
 echo -e "${GREEN}✓ Backend dependencies installed${NC}"
 echo ""
 
@@ -128,21 +131,24 @@ sleep 3
 # Generate JWT keys if they don't exist
 if [ ! -f src/backend/config/jwt/private.pem ] || [ ! -f src/backend/config/jwt/public.pem ]; then
     echo "Generating JWT keys..."
-    # Ensure the directory exists
-    docker compose exec -T php mkdir -p config/jwt 2>/dev/null || true
+    # Ensure the directory exists with proper permissions
+    docker compose exec -T --user root php sh -c "mkdir -p /var/www/config/jwt && chown -R www:www /var/www/config/jwt" 2>/dev/null || true
     
     # Try to generate keypair (this is the standard Lexik JWT command)
     docker compose exec -T php php bin/console lexik:jwt:generate-keypair --overwrite --no-interaction 2>&1 || {
         # If that fails, try without --overwrite flag
         docker compose exec -T php php bin/console lexik:jwt:generate-keypair --no-interaction 2>&1 || {
-            echo -e "${YELLOW}Warning: JWT key generation command failed. Trying alternative...${NC}"
-            # Try the command the user mentioned (though it's likely not correct)
-            docker compose exec -T php php bin/console lexik:jwt:generate-token 2>&1 || {
+            echo -e "${YELLOW}Warning: JWT key generation command failed. Trying as root...${NC}"
+            # Try as root if www user doesn't have permissions
+            docker compose exec -T --user root php php bin/console lexik:jwt:generate-keypair --overwrite --no-interaction 2>&1 || {
                 echo -e "${YELLOW}Note: JWT keys could not be generated automatically.${NC}"
                 echo -e "${YELLOW}Please run manually: docker compose exec php php bin/console lexik:jwt:generate-keypair${NC}"
             }
         }
     }
+    
+    # Fix ownership of JWT keys
+    docker compose exec -T --user root php sh -c "chown -R www:www /var/www/config/jwt 2>/dev/null || true"
     
     # Verify keys were created
     if [ -f src/backend/config/jwt/private.pem ] && [ -f src/backend/config/jwt/public.pem ]; then

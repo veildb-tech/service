@@ -25,7 +25,14 @@ if [ "$1" = 'php-fpm' ] || [ "$1" = 'php' ] || [ "$1" = 'bin/console' ]; then
 	fi
 
 	if [ "$APP_ENV" != 'prod' ]; then
-		composer install --prefer-dist --no-progress --no-interaction
+		# Ensure vendor directory exists and has proper permissions
+		mkdir -p vendor var/cache var/log
+		composer install --prefer-dist --no-progress --no-interaction || {
+			# If composer install fails due to permissions, try as root
+			if [ "$(id -u)" != "0" ]; then
+				echo "Composer install failed. This may be a permissions issue."
+			fi
+		}
 	fi
 
 	if grep -q ^DATABASE_URL= .env; then
@@ -69,16 +76,18 @@ if [ "$1" = 'php-fpm' ] || [ "$1" = 'php' ] || [ "$1" = 'bin/console' ]; then
 			echo "Generating JWT keys..."
 			mkdir -p config/jwt
 			bin/console lexik:jwt:generate-keypair --overwrite --no-interaction 2>/dev/null || {
-				echo "Note: JWT key generation may need to be run manually"
+				echo "Note: JWT key generation may need to be run manually or with proper permissions"
 			}
 		else
 			echo "Note: JWT_PASSPHRASE not set in .env. JWT keys will not be generated automatically."
 		fi
 	fi
+
+	# Ensure var directory has proper permissions
+	mkdir -p var/cache var/log
 fi
 
 #	setfacl -R -m u:www-data:rwX -m u:"$(whoami)":rwX var
 #	setfacl -dR -m u:www-data:rwX -m u:"$(whoami)":rwX var
-fi
 
 exec docker-php-entrypoint "$@"
