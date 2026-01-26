@@ -60,6 +60,36 @@ else
     echo -e "${GREEN}✓ src/frontend/.env already exists${NC}"
 fi
 
+# Prompt for public URL and update frontend .env
+# Check if frontend .env already has a non-localhost URL
+CURRENT_URL=$(grep "^NEXT_PUBLIC_GRAPHQL_URL=" src/frontend/.env | head -1 | sed 's/.*=//' | sed 's|/api/graphql||' || echo "")
+
+if [[ "$CURRENT_URL" == "http://localhost" ]] || [[ -z "$CURRENT_URL" ]] || [[ "$CURRENT_URL" == *"localhost"* ]]; then
+    echo ""
+    echo -e "${YELLOW}Please enter the public URL for the application:${NC}"
+    echo -e "${YELLOW}(e.g., http://localhost, https://app.example.com)${NC}"
+    read -p "Public URL [default: http://localhost]: " PUBLIC_URL
+    PUBLIC_URL=${PUBLIC_URL:-http://localhost}
+
+    # Normalize URL: ensure it starts with http:// or https://, remove trailing slash
+    if [[ ! "$PUBLIC_URL" =~ ^https?:// ]]; then
+        PUBLIC_URL="http://${PUBLIC_URL}"
+    fi
+    PUBLIC_URL="${PUBLIC_URL%/}"
+
+    # Update frontend .env file with the public URL
+    if [[ "$OSTYPE" == "darwin"* ]]; then
+        # macOS
+        sed -i '' "s|http://localhost|${PUBLIC_URL}|g" src/frontend/.env
+    else
+        # Linux
+        sed -i "s|http://localhost|${PUBLIC_URL}|g" src/frontend/.env
+    fi
+    echo -e "${GREEN}✓ Updated frontend .env with public URL: ${PUBLIC_URL}${NC}"
+else
+    echo -e "${GREEN}✓ Frontend .env already has public URL configured: ${CURRENT_URL}${NC}"
+fi
+
 # Generate JWT_PASSPHRASE if not set in backend .env
 if ! grep -q "^JWT_PASSPHRASE=.*[^[:space:]]" src/backend/.env; then
     JWT_PASSPHRASE=$(generate_passphrase)
