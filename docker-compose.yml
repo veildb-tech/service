@@ -48,6 +48,7 @@ services:
     command: 'bash -c "yarn install && yarn build && yarn start"'
     volumes:
       - ./src/frontend:/frontend
+      - /frontend/node_modules
     tty: true
     networks:
       - app-network

@@ -51,6 +51,9 @@
     "simplebar-react": "^3.2.1",
     "yup": "1.0.0"
   },
+  "resolutions": {
+    "es-abstract": "^1.22.3"
+  },
   "devDependencies": {
     "@types/node": "18.13.0",
     "@types/nprogress": "0.2.0",
