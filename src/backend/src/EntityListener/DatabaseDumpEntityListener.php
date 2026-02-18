@@ -113,7 +113,7 @@ readonly class DatabaseDumpEntityListener
 
         $notification->setLevel('warning')
             ->setWorkspace($database->getWorkspace())
-            ->setExternalUrl('https://docs.dbvisor.pro/s/wiki/doc/processing-error-SRFnAjACrC')
+            ->setExternalUrl('https://dbvisor.gitbook.io/')
             ->setMessage(
                 sprintf(
                     "

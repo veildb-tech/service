@@ -80,7 +80,7 @@ export function WorkspaceWebhooks() {
           <NextLink
             target="_blank"
             className="ml-1"
-            href="https://docs.dbvisor.pro/s/wiki/doc/webhooks-cauIOT5Uug"
+            href="https://dbvisor.gitbook.io/"
           >
             <InfoIcon />
           </NextLink>

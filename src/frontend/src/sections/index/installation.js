@@ -165,7 +165,7 @@ source ~/.bashrc`
 
               <span className="inline-block">
                 <NextLink
-                  href="https://docs.dbvisor.pro/s/wiki/doc/installation-N2KuWlBCEF"
+                  href="https://dbvisor.gitbook.io/"
                   className="link-0 link-1 normal-case ml-3 with-document-icon"
                   target="_blank"
                 >
@@ -198,7 +198,7 @@ source ~/.bashrc`
 
             <span className="inline-block">
               <NextLink
-                href="https://docs.dbvisor.pro/s/wiki/doc/installation-N2KuWlBCEF"
+                href="https://dbvisor.gitbook.io/"
                 className="link-0 link-1 normal-case ml-3 with-document-icon"
                 target="_blank"
               >

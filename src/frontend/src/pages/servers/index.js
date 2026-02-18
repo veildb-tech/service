@@ -104,7 +104,7 @@ function Page() {
               <NextLink
                 target="_blank"
                 className="ml-2"
-                href="https://docs.dbvisor.pro/s/wiki/doc/servers-rG60T86EtH"
+                href="https://dbvisor.gitbook.io/"
               >
                 <InfoIcon />
               </NextLink>

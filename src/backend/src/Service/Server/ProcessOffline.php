@@ -37,7 +37,7 @@ readonly class ProcessOffline
         $notification = new Notification();
         $notification->setLevel('error')
             ->setWorkspace($server->getWorkspace())
-            ->setExternalUrl('https://docs.dbvisor.pro/s/wiki/doc/server-is-offline-bknW74sMEr')
+            ->setExternalUrl('https://dbvisor.gitbook.io/')
             ->setMessage(
                 sprintf(
                     "Server \"%s\" is offline for a while. The server was disabled. Please check the server status or contact support if you have questions",

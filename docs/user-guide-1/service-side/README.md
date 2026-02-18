@@ -26,14 +26,14 @@ To use Server credentials you must:
 
 Steps to get Server JWT token:
 
-* need to send on URL: [/api/token\_check](https://db-manager-service.local/api/token_check) POST request with Json data:
+* need to send on URL: [/api/token\_check](https://localhost/api/token_check) POST request with Json data:
   * uuid:
   * secret\_key:
 
 Example:
 
 ```javascript
-curl --location 'https://db-manager-service.local/api/token_check' \
+curl --location 'https://localhost/api/token_check' \
 --header 'Content-Type: application/json' \
 --data '{
     "uuid": "01892b7f-c42b-7e8a-9691-bfce511abbca",

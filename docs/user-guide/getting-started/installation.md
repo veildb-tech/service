@@ -36,10 +36,10 @@ Ensure that all the necessary software is installed before proceeding with the i
 
     ```bash
     ## For alpine
-    curl http://db-manager-cli.bridge2.digital/download/dbvisor-agent-install | sh
+    curl https://dbvisor.pro/download/dbvisor-agent-install | sh
 
     ## For debian
-    curl http://db-manager-cli.bridge2.digital/download/dbvisor-agent-install | bash
+    curl https://dbvisor.pro/download/dbvisor-agent-install | bash
     source ~/.bashrc
     ```
 
@@ -72,7 +72,7 @@ sudo apt update && apt install php
 Execute the following command to install the client-side version.
 
 ```bash
-curl http://db-manager-cli.bridge2.digital/download/install | bash
+curl https://dbvisor.pro/download/install | bash
 ```
 
 After it is installed locally, you have to log in and enterthe  public key provided by your administrator (the person who has access to dbvisor agent / to the server):

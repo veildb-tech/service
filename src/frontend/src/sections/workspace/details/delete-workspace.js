@@ -41,7 +41,7 @@ export function DeleteWorkspace(props) {
             <span className="inline-block">
               Follow
               <NextLink
-                href="https://docs.dbvisor.pro/s/wiki/doc/uninstall-Jv8bLOX7ov"
+                href="https://dbvisor.gitbook.io/"
                 className="link-0 link-1 normal-case ml-3 mr-2 !inline-block with-document-icon"
                 target="_blank"
               >

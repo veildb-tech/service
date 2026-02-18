@@ -7,16 +7,16 @@ export function QuickGuide() {
   const setupSteps = [
     {
       step: 'Install DB Visor Agent to your server and link it to your account',
-      link: 'https://docs.dbvisor.pro/s/wiki/doc/database-management-3u5pKI3VZL'
+      link: 'https://dbvisor.gitbook.io/dbvisor-docs/user-guide/dbvisor-agent/database-management'
     },
     { step: 'Add new database and analyze it' },
     {
       step: 'Configure scheduling and rules',
-      link: 'https://docs.dbvisor.pro/s/wiki/doc/dbvisor-agent-RpMh0f9xSW'
+      link: 'https://dbvisor.gitbook.io/dbvisor-docs/user-guide/dbvisor-agent'
     },
     {
       step: 'Give permissions to your team',
-      link: 'https://docs.dbvisor.pro/s/wiki/doc/dbvisor-agent-RpMh0f9xSW'
+      link: 'https://dbvisor.gitbook.io/dbvisor-docs/user-guide/dbvisor-agent'
     }
   ];
 

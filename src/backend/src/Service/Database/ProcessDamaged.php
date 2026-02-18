@@ -38,7 +38,7 @@ readonly class ProcessDamaged
         $notification = new Notification();
         $notification->setLevel('error')
             ->setWorkspace($database->getWorkspace())
-            ->setExternalUrl('https://docs.dbvisor.pro/s/wiki/doc/database-error-CmVFZPRHuD')
+            ->setExternalUrl('https://dbvisor.gitbook.io/')
             ->setMessage(
                 sprintf(
                     "Database \"%s\" is corrupted: 3 previous attempts to create a dump failed. Database was disabled.",
