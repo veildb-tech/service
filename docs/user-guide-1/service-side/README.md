@@ -1,11 +1,5 @@
 # Service Side
 
-:::info
-**Dev website:** <https://dbm-service.bridge.digital/>
-
-:::
-
-
 ## Authentication
 
 For authentication on service is used the module: lexik/jwt-authentication-bundle which is based on using JWT token.
@@ -25,18 +19,16 @@ Both of types return as result JWT token which must be used for any API request.
 Authorization: Bearer < token >
 ```
 
-
 To use Server credentials you must:
 
 * add an additional header: `Authorization-Type: Token`
 * a server must be in Enabled status
 
-
 Steps to get Server JWT token:
 
-* need to send on URL: [<service url>/api/token_check](https://db-manager-service.local/api/token_check)  POST request with Json data:
-  * uuid: <server UUID>
-  * secret_key: <server Secret Key>
+* need to send on URL: [/api/token\_check](https://db-manager-service.local/api/token_check) POST request with Json data:
+  * uuid:
+  * secret\_key:
 
 Example:
 
@@ -49,31 +41,27 @@ curl --location 'https://db-manager-service.local/api/token_check' \
 }'
 ```
 
-
-## Public API: 
+## Public API:
 
 Server:
 
+1.  POST: /api/servers -
 
-1. POST: /api/servers - 
+    OST array:
 
-   OST array:
+    1.  \\
 
-   
-   1. \
-      ```javascript
-      {
-        "name": "string",
-        "uuid": "<UUID>",
-        "status": "<enabled | disabled | pending>",
-        "databases": [],
-        "workspaceId": <workspace ID>
-      }
-      ```
-
+        ```javascript
+        {
+          "name": "string",
+          "uuid": "<UUID>",
+          "status": "<enabled | disabled | pending>",
+          "databases": [],
+          "workspaceId": <workspace ID>
+        }
+        ```
 
 ## DB Cleaning rules
-
 
 Main structure for whole table:
 
@@ -83,7 +71,6 @@ Main structure for whole table:
    where => <rules>
 ],
 ```
-
 
 Structure for updating columns of table:
 
@@ -98,7 +85,6 @@ Structure for updating columns of table:
   ],
 ],
 ```
-
 
 Example:
 
@@ -143,10 +129,9 @@ Example:
 ]
 ```
 
-
 ## Backup Cleaning Rules:
 
-List or backups for deleting will be returned by URL:  api/servers/<Server UUID>/get_dump_delete_list.
+List or backups for deleting will be returned by URL: api/servers//get\_dump\_delete\_list.
 
 The URL will take all DB related to server, get Server rules and according to rules will return array:
 
@@ -159,7 +144,6 @@ The URL will take all DB related to server, get Server rules and according to ru
   ...
 ]
 ```
-
 
 Rules on service side must be saved into the next variant:
 
@@ -177,7 +161,6 @@ In field "rule" could be used:
 * gt => '>'
 * lt => '<'
 
-
 In field value could be used
 
-* date in format: **ISO 8601 ( <https://www.digi.com/resources/documentation/digidocs//90001488-13/reference/r_iso_8601_duration_format.htm> )**
+* date in format: **ISO 8601 (** [**https://www.digi.com/resources/documentation/digidocs//90001488-13/reference/r\_iso\_8601\_duration\_format.htm**](https://www.digi.com/resources/documentation/digidocs/90001488-13/reference/r_iso_8601_duration_format.htm) **)**

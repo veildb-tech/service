@@ -4,8 +4,7 @@ The primary concept of the manual backup method is that the administrator should
 
 One crucial consideration is to store these backups inside the `<path_to_local_backups>` folder, where `<path_to_local_backups>` is specified during the installation process. You can modify this path in the .env file located at `$HOME/.dbvisor-agent/.env`. Change the variable `APP_DOCKER_LOCAL_BACKUPS_PATH=` accordingly.
 
-
-:::warning
+{% hint style="warning" %}
 When setting up a new database using the manual method, the path to the file should start from `<path_to_local_backups>.` For example:
 
 ```sql
@@ -13,5 +12,4 @@ When setting up a new database using the manual method, the path to the file sho
 ```
 
 Here,`<path_to_local_backups>` is assumed to be `/root/dbvisor-agent-backups/local_backups/`.
-
-:::
+{% endhint %}

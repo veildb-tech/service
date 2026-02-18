@@ -1,11 +1,12 @@
 # Server Side
 
-# Symfony
+## Server Side
+
+## Symfony
 
 Current structure of the application is following:
 
-
-## Available commands:
+### Available commands:
 
 ```javascript
 php bin/consosle app:db:process --uid=<Database UID> --db=<Database Name>
@@ -17,10 +18,9 @@ php bin/console app:server:generate-keypair
 php bin/console app:db:backups:clear
 ```
 
+#### Create new processor
 
-### Create new processor
-
-To create new processor need to create new bundle which extends from DbManager_CoreBundle. Need to create service.yaml file:
+To create new processor need to create new bundle which extends from DbManager\_CoreBundle. Need to create service.yaml file:
 
 ```yaml
 services:
@@ -30,16 +30,15 @@ services:
     arguments: []
 ```
 
-Where <engine_name> should be changed to engine name. It should be similar to which is specified in the service.
+Where \<engine\_name> should be changed to engine name. It should be similar to which is specified in the service.
 
-Class **DbManager\\<Engine>Bundle\\Service\\EngineProcessor** should implement **DbManager\\CoreBundle\\Interfaces\\EngineInterface** interface.
+Class **DbManager\Bundle\Service\EngineProcessor** should implement **DbManager\CoreBundle\Interfaces\EngineInterface** interface.
 
-Note: **<Engine>Bundle** it could be any name of bundle.
+Note: **Bundle** it could be any name of bundle.
 
+## Database Configurations
 
-# Database Configurations
-
-Configurations to databases should be stored under <app_directory>/config/<db_uuid>/config with following formats:
+Configurations to databases should be stored under \<app\_directory>/config/\<db\_uuid>/config with following formats:
 
 ```yaml
 METHOD=dump
@@ -59,8 +58,7 @@ METHOD=manual
 DUMP_NAME=test.sql
 ```
 
-
-## Server Configurations
+### Server Configurations
 
 To get access to the service API with server credentials need to fill next params in .env file:
 
@@ -76,14 +74,12 @@ Params could be filled in 2 ways:
 * manually
 * automatically during adding / updating server data, in this case existed data will be overridden by new data
 
-
-## Generating SSL Keys
+### Generating SSL Keys
 
 To get the ability to download DB from a server by client request will be required 2 SSL Keys:
 
 * public on client side
 * private on server side
-
 
 To generate keys need to execute the command:
 
@@ -93,14 +89,12 @@ php bin/console app:server:generate-keypair
 
 The command will require a key par owner and as a result, will return the generated public key which must be added on the client side.
 
-
-### Required configurations:
+#### Required configurations:
 
 On sever side in .env file:
 
-* SECRET_KEY_PRIVATE=<path to private key>
-* SECRET_KEY_PUBLIC=<path to public key>
-
+* SECRET\_KEY\_PRIVATE=
+* SECRET\_KEY\_PUBLIC=
 
 On the client side, in .env file:
 
@@ -108,15 +102,12 @@ On the client side, in .env file:
 KEY_FILE=<path to public key>
 ```
 
-
-### Removing backups:
+#### Removing backups:
 
 Are backups could be deleted in two ways:
 
-
 1. manually
 2. automatically via service rules
-
 
 To delete automatically need to execute the command:
 
@@ -124,4 +115,4 @@ To delete automatically need to execute the command:
 php bin/console app:db:backups:clear
 ```
 
-It takes APP_SERVER_UUID and send request to service API Url:  api/servers/<Server UUID>/get_dump_delete_list. The API request will return are list of db files which must be deleted.
+It takes APP\_SERVER\_UUID and send request to service API Url: api/servers//get\_dump\_delete\_list. The API request will return are list of db files which must be deleted.
