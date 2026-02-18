@@ -40,7 +40,7 @@ services:
       - ./src/backend:/var/www
       - ./docker/nginx/conf.d/:/etc/nginx/conf.d/
   frontend:
-    image: node:18
+    image: node:20
     stdin_open: true
     ports:
       - ${FRONTEND_PORT:-3000}:3000
