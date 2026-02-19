@@ -6,17 +6,17 @@ import { DocumentIcon, ContactUsIcon } from 'src/elements/icons';
 export function QuickGuide() {
   const setupSteps = [
     {
-      step: 'Install DB Visor Agent to your server and link it to your account',
-      link: 'https://dbvisor.gitbook.io/dbvisor-docs/user-guide/dbvisor-agent/database-management'
+      step: 'Install VeilDB Agent to your server and link it to your account',
+      link: 'https://veildb.gitbook.io/dbvisor-docs/user-guide/dbvisor-agent/database-management'
     },
     { step: 'Add new database and analyze it' },
     {
       step: 'Configure scheduling and rules',
-      link: 'https://dbvisor.gitbook.io/dbvisor-docs/user-guide/dbvisor-agent'
+      link: 'https://veildb.gitbook.io/dbvisor-docs/user-guide/dbvisor-agent'
     },
     {
       step: 'Give permissions to your team',
-      link: 'https://dbvisor.gitbook.io/dbvisor-docs/user-guide/dbvisor-agent'
+      link: 'https://veildb.gitbook.io/dbvisor-docs/user-guide/dbvisor-agent'
     }
   ];
 

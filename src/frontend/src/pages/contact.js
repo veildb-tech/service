@@ -51,7 +51,7 @@ function Page() {
   return (
     <>
       <Head>
-        <title>Contact Us | DB Visor</title>
+        <title>Contact Us | VeilDB</title>
       </Head>
 
       <div className="flex flex-col h-full">

@@ -37,7 +37,7 @@ function App(props) {
   return (
     <CacheProvider value={emotionCache}>
       <Head>
-        <title>DB Visor App</title>
+        <title>VeilDB App</title>
         <meta
           name="viewport"
           content="initial-scale=1, width=device-width"

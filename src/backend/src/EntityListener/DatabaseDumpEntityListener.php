@@ -113,7 +113,7 @@ readonly class DatabaseDumpEntityListener
 
         $notification->setLevel('warning')
             ->setWorkspace($database->getWorkspace())
-            ->setExternalUrl('https://dbvisor.gitbook.io/')
+            ->setExternalUrl('https://veildb.gitbook.io/')
             ->setMessage(
                 sprintf(
                     "

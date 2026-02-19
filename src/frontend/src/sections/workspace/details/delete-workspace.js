@@ -33,7 +33,7 @@ export function DeleteWorkspace(props) {
             <br />
             <span>
               <strong>Please note:&nbsp;</strong>
-              all DB Visor Agent information stored on your servers should be removed manually.
+              all VeilDB Agent information stored on your servers should be removed manually.
             </span>
 
             <br />
@@ -41,14 +41,14 @@ export function DeleteWorkspace(props) {
             <span className="inline-block">
               Follow
               <NextLink
-                href="https://dbvisor.gitbook.io/"
+                href="https://veildb.gitbook.io/"
                 className="link-0 link-1 normal-case ml-3 mr-2 !inline-block with-document-icon"
                 target="_blank"
               >
                 <DocumentIcon />
                 steps
               </NextLink>
-              from documentation to remove DB Visor agent from your servers
+              from documentation to remove VeilDB Agent from your servers
             </span>
           </Typography>
         </div>

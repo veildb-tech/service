@@ -20,7 +20,7 @@ in other case, adda  new line:
 bind-address = 172.27.0.1
 ```
 
-Bind address must be equivalent to db visor subnet address.
+Bind address must be equivalent to VeilDB subnet address.
 
 2.  The second step is to add privileges for user to connect from subnet IP. Connect to mysql
 

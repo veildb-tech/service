@@ -18,7 +18,7 @@ final readonly class SendContactEmailResolver implements MutationResolverInterfa
     /**
      * TODO: replace to some configurations
      */
-    const SUPPORT_EMAIL = 'support@dbvisor.pro';
+    const SUPPORT_EMAIL = 'support@veildb.com';
 
     /**
      * @param Security $security

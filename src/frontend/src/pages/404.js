@@ -6,7 +6,7 @@ function Page() {
   return (
     <>
       <Head>
-        <title>404 | DB Visor</title>
+        <title>404 | VeilDB</title>
       </Head>
 
       <NotFound />

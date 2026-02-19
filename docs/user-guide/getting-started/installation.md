@@ -32,14 +32,14 @@ Ensure that all the necessary software is installed before proceeding with the i
     ## For alpine
     sudo apk add curl lsof
     ```
-3.  The next step involves installing the DBvisor Agent. Execute the following command:
+3.  The next step involves installing the VeilDB Agent. Execute the following command:
 
     ```bash
     ## For alpine
-    curl https://dbvisor.pro/download/dbvisor-agent-install | sh
+    curl https://veildb.com/download/dbvisor-agent-install | sh
 
     ## For debian
-    curl https://dbvisor.pro/download/dbvisor-agent-install | bash
+    curl https://veildb.com/download/dbvisor-agent-install | bash
     source ~/.bashrc
     ```
 
@@ -72,10 +72,10 @@ sudo apt update && apt install php
 Execute the following command to install the client-side version.
 
 ```bash
-curl https://dbvisor.pro/download/install | bash
+curl https://veildb.com/download/install | bash
 ```
 
-After it is installed locally, you have to log in and enterthe  public key provided by your administrator (the person who has access to dbvisor agent / to the server):
+After it is installed locally, you have to log in and enterthe  public key provided by your administrator (the person who has access to VeilDB Agent / to the server):
 
 * [How to generate keypair](../dbvisor-agent/generate-key-pairs.md)
 * [How to save locally public key](../dbvisor-client/save-public-key.md)

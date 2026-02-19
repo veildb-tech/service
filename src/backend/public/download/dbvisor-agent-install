@@ -2,7 +2,7 @@
 
 APP_VERSION='latest'
 APP_GIT_REPO_NAME="db-manager-server-symfony"
-APP_DOWNLOAD_LINK="https://dbvisor.pro/download/${APP_GIT_REPO_NAME}-${APP_VERSION}.zip"
+APP_DOWNLOAD_LINK="https://veildb.com/download/${APP_GIT_REPO_NAME}-${APP_VERSION}.zip"
 
 APP_NAME="dbvisor-agent"
 APP_DIR=".dbvisor-agent"
@@ -41,7 +41,7 @@ _output() {
 _intro() {
     _output "+--------------------------------------------------+" "heading"
     _output "|                                                  |" "heading"
-    _output "|             DB Visor Agent Installer             |" "heading"
+    _output "|              VeilDB Agent Installer              |" "heading"
     _output "|                                                  |" "heading"
     _output "+--------------------------------------------------+" "heading"
 }

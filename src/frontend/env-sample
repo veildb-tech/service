@@ -2,4 +2,4 @@ NEXT_PUBLIC_GRAPHQL_URL=http://localhost/api/graphql
 NEXT_PUBLIC_LOGIN_URL=http://localhost/api/login_check
 NEXT_PUBLIC_REFRESH_URL=http://localhost/api/token/refresh
 NEXT_PUBLIC_SAVE_WORKSPACE_URL=http://localhost/api/save_workspace
-NEXT_PUBLIC_DOWNLOAD_URL=https://app.dbvisor.pro/
+NEXT_PUBLIC_DOWNLOAD_URL=https://veildb.com/

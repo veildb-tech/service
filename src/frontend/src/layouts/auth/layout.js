@@ -30,7 +30,7 @@ export function Layout(props) {
                 </div>
 
                 <div className="text-dbm-color-white mb-4 font-jakarta font-bold text-lg">Welcome to</div>
-                <div className="text-dbm-color-white font-jakarta font-bold text-6-7lg">DB Visor</div>
+                <div className="text-dbm-color-white font-jakarta font-bold text-6-7lg">VeilDB</div>
               </div>
             </div>
           </div>

@@ -1,11 +1,11 @@
 # Table of contents
 
-* [DB Visor](README.md)
+* [VeilDB](README.md)
 * [User Guide](user-guide/README.md)
   * [Getting Started](user-guide/getting-started/README.md)
     * [General Principies](user-guide/getting-started/general-principies.md)
     * [Installation](user-guide/getting-started/installation.md)
-  * [DBVisor Agent](user-guide/dbvisor-agent/README.md)
+  * [VeilDB Agent](user-guide/dbvisor-agent/README.md)
     * [Configure public URL](user-guide/dbvisor-agent/configure-public-url.md)
     * [Database Management](user-guide/dbvisor-agent/database-management.md)
     * [Dump methods](user-guide/dbvisor-agent/dump-methods.md)
@@ -14,7 +14,7 @@
       * [Manual / Custom](user-guide/dbvisor-agent/dump-methods-1/manual-2f-custom.md)
       * [Mysqldump](user-guide/dbvisor-agent/dump-methods-1/mysqldump.md)
       * [Postgres pg\_dump](user-guide/dbvisor-agent/dump-methods-1/postgres-pg_dump.md)
-  * [DBVisor Client](user-guide/dbvisor-client/README.md)
+  * [VeilDB Client](user-guide/dbvisor-client/README.md)
     * [Download database](user-guide/dbvisor-client/download-database.md)
     * [Login](user-guide/dbvisor-client/login.md)
     * [Save public key](user-guide/dbvisor-client/save-public-key.md)

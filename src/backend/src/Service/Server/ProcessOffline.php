@@ -37,7 +37,7 @@ readonly class ProcessOffline
         $notification = new Notification();
         $notification->setLevel('error')
             ->setWorkspace($server->getWorkspace())
-            ->setExternalUrl('https://dbvisor.gitbook.io/')
+            ->setExternalUrl('https://veildb.gitbook.io/')
             ->setMessage(
                 sprintf(
                     "Server \"%s\" is offline for a while. The server was disabled. Please check the server status or contact support if you have questions",

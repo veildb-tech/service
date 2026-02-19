@@ -104,7 +104,7 @@ function Page() {
               <NextLink
                 target="_blank"
                 className="ml-2"
-                href="https://dbvisor.gitbook.io/"
+                href="https://veildb.gitbook.io/"
               >
                 <InfoIcon />
               </NextLink>

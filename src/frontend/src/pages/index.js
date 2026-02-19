@@ -19,7 +19,7 @@ function Page() {
   return (
     <>
       <Head>
-        <title>Overview | DB Visor</title>
+        <title>Overview | VeilDB</title>
       </Head>
 
       <div className="flex flex-col h-full">

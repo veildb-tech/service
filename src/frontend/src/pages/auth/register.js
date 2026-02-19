@@ -50,7 +50,7 @@ function Page() {
   return (
     <>
       <Head>
-        <title>Register | DB Visor</title>
+        <title>Register | VeilDB</title>
       </Head>
 
       <div className="flex flex-col items-center justify-center w-full bg-dbm-color-white">

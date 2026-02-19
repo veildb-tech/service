@@ -80,7 +80,7 @@ export function WorkspaceWebhooks() {
           <NextLink
             target="_blank"
             className="ml-1"
-            href="https://dbvisor.gitbook.io/"
+            href="https://veildb.gitbook.io/"
           >
             <InfoIcon />
           </NextLink>

@@ -2,7 +2,7 @@
 
 set -euo pipefail
 
-app_download_url="https://app.dbvisor.pro/download/db-visor-client-latest.zip"
+app_download_url="https://veildb.com/download/db-visor-client-latest.zip"
 app_name="dbvisor"
 app_dir=".dbvisor"
 app_bin_path="$HOME/$app_dir/bin"

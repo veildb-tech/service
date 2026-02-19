@@ -1,8 +1,8 @@
-# DB Visor
+# VeilDB
 
 ## Overview
 
-Welcome to DB Visor user documentation. There are two main sections:
+Welcome to VeilDB user documentation. There are two main sections:
 
 1. User Guide - user documentation on how to work with a solution, step-by-step instructions on installation and configuration of the application. It should be the first step when starting to work with a solution.
 2. The Development Guide contains some development notes. It could be useful for those who are going to contribute or customize.<br>
@@ -13,7 +13,7 @@ This project was started as a "pet-project," and was primarily intended to be a 
 
 The reason for creating a separate "Service" interface was the project's commercial nature from the outset.&#x20;
 
-Let us know by email at support@dbvisor.pro if you notice any issues in the documentation, or fix them directly and contribute.
+Let us know by email at support@veildb.com if you notice any issues in the documentation, or fix them directly and contribute.
 
 ### License
 

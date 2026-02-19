@@ -13,7 +13,7 @@ export function ContactNav() {
         variant="p"
         className="text-dbm-color-3 text-base font-semibold p-2 pb-0"
       >
-        <NextLink target="_blank" href="https://dbvisor.gitbook.io/">Documentation</NextLink>
+        <NextLink target="_blank" href="https://veildb.gitbook.io/">Documentation</NextLink>
       </Typography>
 
       <Typography

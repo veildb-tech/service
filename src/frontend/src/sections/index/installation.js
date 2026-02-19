@@ -15,7 +15,7 @@ export function IndexInstallation(props) {
   const [clientValue, setClientValue] = React.useState('ubuntu');
   const [copyStatus, setToggleCopyStatus] = React.useState('');
   const [copyStatusMessage, setCopyStatusMessage] = React.useState('');
-  const domain = process.env.NEXT_PUBLIC_DOWNLOAD_URL ?? 'https://app.dbvisor.pro/';
+  const domain = process.env.NEXT_PUBLIC_DOWNLOAD_URL ?? 'https://veildb.com/';
 
   const handleChange = (newValue) => {
     setValue(newValue);
@@ -165,7 +165,7 @@ source ~/.bashrc`
 
               <span className="inline-block">
                 <NextLink
-                  href="https://dbvisor.gitbook.io/"
+                  href="https://veildb.gitbook.io/"
                   className="link-0 link-1 normal-case ml-3 with-document-icon"
                   target="_blank"
                 >
@@ -198,7 +198,7 @@ source ~/.bashrc`
 
             <span className="inline-block">
               <NextLink
-                href="https://dbvisor.gitbook.io/"
+                href="https://veildb.gitbook.io/"
                 className="link-0 link-1 normal-case ml-3 with-document-icon"
                 target="_blank"
               >

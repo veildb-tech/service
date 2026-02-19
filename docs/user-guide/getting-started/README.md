@@ -16,9 +16,9 @@ The primary advantage is the ability to use a single interface across various se
 
 From a technical standpoint, the system consists of three applications:
 
-1. **DBvisor Service:** The primary website where users interact. It allows configuring rules, accessing database configurations, and viewing important logs.
-2. **DBvisor Agent:** This application is installed on your server and is responsible for processing and backing up databases.
-3. **DBvisor Client:** Installed locally on developers' computers, this application simplifies logging in and downloading the latest backup.
+1. **VeilDB Service:** The primary website where users interact. It allows configuring rules, accessing database configurations, and viewing important logs.
+2. **VeilDB Agent:** This application is installed on your server and is responsible for processing and backing up databases.
+3. **VeilDB Client:** Installed locally on developers' computers, this application simplifies logging in and downloading the latest backup.
 
 {% hint style="warning" %}
 **Important Note:** All database credentials and data are stored on your server side. The service side exclusively retains database schemas and the server's IP address
