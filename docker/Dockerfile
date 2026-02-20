@@ -1,5 +1,5 @@
 FROM php:8.2-fpm
-#COPY composer.lock composer.json /var/www/
+
 WORKDIR /var/www
 
 RUN apt-get update && apt-get install -y \
@@ -34,10 +34,6 @@ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local
 RUN groupadd -g 1000 www
 RUN useradd -u 1000 -ms /bin/bash -g www www
 
-#COPY ./src/backend /var/www
-
-#COPY --chown=www:www src/backend /var/www
-
 COPY php/docker-healthcheck.sh /usr/local/bin/docker-healthcheck
 RUN chmod +x /usr/local/bin/docker-healthcheck
 
@@ -49,5 +45,5 @@ RUN chmod +x /usr/local/bin/docker-entrypoint
 USER www
 
 EXPOSE 9000
-#ENTRYPOINT ["docker-entrypoint"]
+
 CMD ["php-fpm"]

@@ -8,7 +8,7 @@ services:
     depends_on:
       - database
     networks:
-      - app-network
+      - veildb-network
     healthcheck:
       interval: 10s
       timeout: 3s
@@ -18,13 +18,12 @@ services:
       - host.docker.internal:host-gateway
     environment:
       PHP_IDE_CONFIG: serverName=docker
-      # Run "composer require symfony/orm-pack" to install and configure Doctrine ORM
-      #DATABASE_URL: postgresql://${POSTGRES_USER:-app}:${POSTGRES_PASSWORD:-!ChangeMe!}@database:5432/${POSTGRES_DB:-app}?serverVersion=${POSTGRES_VERSION:-14}&charset=${POSTGRES_CHARSET:-utf8}
       # Run "composer require symfony/mercure-bundle" to install and configure the Mercure integration
       DATABASE_URL: mysql://${DB_USERNAME}:${DB_PASSWORD}@database:3306/${DB_DATABASE}?serverVersion=8&charset=utf8mb4
     volumes:
       - "./src/backend:/var/www"
       - ./docker/php/local.ini:/usr/local/etc/php/conf.d/local.ini
+
   nginx:
     image: nginx:alpine
     depends_on:
@@ -35,15 +34,14 @@ services:
     ports:
       - ${NGINX_PORT}:80
     networks:
-      - app-network
+      - veildb-network
     volumes:
       - ./src/backend:/var/www
       - ./docker/nginx/conf.d/:/etc/nginx/conf.d/
+
   frontend:
     image: node:20
     stdin_open: true
-    ports:
-      - ${FRONTEND_PORT:-3000}:3000
     working_dir: /frontend
     command: 'bash -c "yarn install && yarn build && yarn start"'
     volumes:
@@ -51,7 +49,8 @@ services:
       - /frontend/node_modules
     tty: true
     networks:
-      - app-network
+      - veildb-network
+
   database:
     image: mysql:8.0.22
     platform: linux/x86_64
@@ -61,13 +60,15 @@ services:
       MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
       MYSQL_ROOT_HOST: "%"
     networks:
-      - app-network
+      - veildb-network
     volumes:
       - ./docker/mysql/data:/var/lib/mysql
       - ./docker/mysql/my.cnf:/etc/mysql/conf.d/my.cnf
+
 networks:
-  app-network:
+  veildb-network:
     driver: bridge
+
 volumes:
-  dbdata:
+  veildb-dbdata:
     driver: local

@@ -56,9 +56,7 @@ If you prefer to install manually:
 
 #### Services
 
-After installation, services will be available at:
-- Backend API: http://localhost:80 (or port specified in `.env` as `NGINX_PORT`)
-- Frontend: http://localhost:3000 (or port specified in `.env` as `FRONTEND_PORT`)
+After installation, services will be available at: http://localhost:8080 (or port specified in `.env` as `NGINX_PORT`)
 
 #### Troubleshooting
 

@@ -200,10 +200,11 @@ echo ""
 
 # Step 6: Install frontend dependencies
 echo -e "${YELLOW}[6/6] Installing frontend dependencies...${NC}"
-docker compose exec -T frontend yarn install --frozen-lockfile || {
-    echo -e "${YELLOW}Warning: Frontend dependencies installation had issues. Trying alternative...${NC}"
-    docker compose exec -T frontend yarn install
-}
+# It runs automatically while docker starts
+# docker compose exec -T frontend yarn install --frozen-lockfile || {
+#     echo -e "${YELLOW}Warning: Frontend dependencies installation had issues. Trying alternative...${NC}"
+#     docker compose exec -T frontend yarn install
+# }
 echo -e "${GREEN}✓ Frontend dependencies installed${NC}"
 echo ""
 
@@ -225,8 +226,8 @@ if [ -f .env ]; then
 fi
 
 echo "Services are running:"
-echo "  - Backend API: http://localhost:${NGINX_PORT}"
-echo "  - Frontend: http://localhost:${FRONTEND_PORT}"
+echo "  - Local URL: http://localhost:${NGINX_PORT}"
+echo "  - Public URL: ${PUBLIC_URL}"
 echo ""
 echo "To view logs:"
 echo "  docker compose logs -f"

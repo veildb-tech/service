@@ -10,11 +10,9 @@ services:
       PMA_HOST: database
       MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
     networks:
-      - app-network
-
-  nginx:
-    ports:
-      - 81:81
+      - veildb-network
 
   frontend:
     command: 'bash -c "yarn install && yarn dev"'
+    ports:
+      - ${FRONTEND_PORT:-3000}:3000

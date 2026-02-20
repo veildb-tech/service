@@ -12,7 +12,6 @@ import { QuickGuide } from './quick-guide';
 export function IndexInstallation(props) {
   const { isNewWorkspace } = props;
   const [value, setValue] = React.useState('debian');
-  const [clientValue, setClientValue] = React.useState('ubuntu');
   const [copyStatus, setToggleCopyStatus] = React.useState('');
   const [copyStatusMessage, setCopyStatusMessage] = React.useState('');
   const domain = process.env.NEXT_PUBLIC_DOWNLOAD_URL ?? 'https://veildb.com/';
@@ -47,11 +46,11 @@ export function IndexInstallation(props) {
     { title: 'alpine / centos', value: 'alpine' }
   ];
 
-  const clientSwitchOptions = [
-    { title: 'Ubuntu', value: 'ubuntu' },
-    { title: 'Mac (Apple)', value: 'mac_arm' },
-    { title: 'Mac (Intel)', value: 'mac_amd' },
-    { title: 'Windows', value: 'windows' }
+  const clientDownloads = [
+    { title: 'Linux', url: 'https://veildb.com/download/veildb-linux-amd64-latest.zip' },
+    { title: 'Mac (AMD)', url: 'https://veildb.com/download/veildb-darwin-amd64-latest.zip' },
+    { title: 'Mac (ARM)', url: 'https://veildb.com/download/veildb-darwin-arm64-latest.zip' },
+    { title: 'Windows', url: 'https://veildb.com/download/veildb-windows-amd64-latest.zip' }
   ];
 
   const agentInstallations = [
@@ -66,39 +65,6 @@ source ~/.bashrc`
     }
   ];
 
-  const clientInstallations = [
-    {
-      value: 'ubuntu',
-      downloadLink: `${domain}download/dbvisor_linux.zip`,
-      // eslint-disable-next-line max-len
-      installations: `curl ${domain}download/dbvisor_linux.zip -o /tmp/dbvisor_linux.zip && sudo unzip -o /tmp/dbvisor_linux.zip -d /usr/local/dbvisor/ && rm /tmp/dbvisor_linux.zip 
-`
-      + 'sudo ln -s /usr/local/dbvisor/bin/dbvisor_linux /usr/local/bin/dbvisor\n'
-      + 'source $HOME/.bashrc'
-    },
-    {
-      value: 'mac_arm',
-      downloadLink: `${domain}download/dbvisor_mac_arm64.zip`,
-      // eslint-disable-next-line max-len
-      installations: `curl ${domain}download/dbvisor_mac_arm64.zip -o /tmp/dbvisor_arm64.zip && sudo unzip -o /tmp/dbvisor_arm64.zip -d /usr/local/dbvisor/ && rm /tmp/dbvisor_arm64.zip 
-`
-        + 'sudo ln -s /usr/local/dbvisor/bin/dbvisor_mac_arm64 /usr/local/bin/dbvisor\n'
-        + 'source $HOME/.zshrc'
-    },
-    {
-      value: 'mac_amd',
-      downloadLink: `${domain}download/dbvisor_mac_amd64.zip`,
-      // eslint-disable-next-line max-len
-      installations: `curl ${domain}download/dbvisor_mac_amd64.zip -o /tmp/dbvisor_mac_amd64.zip && sudo unzip -o /tmp/dbvisor_mac_amd64.zip -d /usr/local/dbvisor/ && rm /tmp/dbvisor_mac_amd64.zip 
-`
-        + 'sudo ln -s /usr/local/dbvisor/bin/dbvisor_mac_amd64 /usr/local/bin/dbvisor\n'
-        + 'source $HOME/.zshrc'
-    },
-    {
-      value: 'windows',
-      installations: 'comming soon...'
-    }
-  ];
 
   const tabPanelTemplate = (tab) => (
     <TabPanel
@@ -165,7 +131,7 @@ source ~/.bashrc`
 
               <span className="inline-block">
                 <NextLink
-                  href="https://veildb.gitbook.io/"
+                  href="https://veildb.gitbook.io/veildb-docs/user-guide/getting-started/installation#server-side-configuration"
                   className="link-0 link-1 normal-case ml-3 with-document-icon"
                   target="_blank"
                 >
@@ -198,7 +164,7 @@ source ~/.bashrc`
 
             <span className="inline-block">
               <NextLink
-                href="https://veildb.gitbook.io/"
+                href="https://veildb.gitbook.io/veildb-docs/user-guide/getting-started/installation#preparing-environment"
                 className="link-0 link-1 normal-case ml-3 with-document-icon"
                 target="_blank"
               >
@@ -207,16 +173,19 @@ source ~/.bashrc`
               </NextLink>
             </span>
           </Typography>
-          <Switch1
-            className="self-start w-[450px] mt-3"
-            selectedOption={clientValue}
-            setOption={(newValue) => setClientValue(newValue)}
-            options={clientSwitchOptions}
-            name="searchtype"
-          />
-          <TabContext value={clientValue}>
-            {clientInstallations.map((tab) => tabPanelTemplate(tab))}
-          </TabContext>
+          <div className="flex flex-wrap gap-3 mt-3">
+            {clientDownloads.map((item) => (
+              <Button
+                key={item.title}
+                variant="outlined"
+                component="a"
+                href={item.url}
+                download
+              >
+                {item.title}
+              </Button>
+            ))}
+          </div>
         </div>
       </div>
     </div>
