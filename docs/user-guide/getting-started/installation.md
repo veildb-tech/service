@@ -36,10 +36,10 @@ Ensure that all the necessary software is installed before proceeding with the i
 
     ```bash
     ## For alpine
-    curl https://veildb.com/download/dbvisor-agent-install | sh
+    curl https://veildb.com/download/veildb-agent-install | sh
 
     ## For debian
-    curl https://veildb.com/download/dbvisor-agent-install | bash
+    curl https://veildb.com/download/veildb-agent-install | bash
     source ~/.bashrc
     ```
 
