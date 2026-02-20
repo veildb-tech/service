@@ -20,7 +20,7 @@ It will ask for all the required information and analyze the database. Let's div
    * **Platform:** Some projects may have a specific database structure. We support certain CMS systems for easy management. For instance, Magento 2 involves additional processing of attributes. If your platform is not listed, select "custom" to manually configure rules on the service side.
    * **Dump Methods:** Select where the original database backup is stored. For more details, refer to this link: [Dump Methods](dump-methods.md).
 3. Based on the selected dump method, provide all necessary information and credentials. Note: We do not store these credentials on the service side; they are stored in the dbvisor-agent config files. The responsibility to protect these configs lies with the server administrator.
-4. After filling in all the information, the system will automatically check the connection to the database. If the connection is established, it will prompt you to analyze the database. We recommend performing the analysis (duration depends on the database size) to configure rules effectively.
+4. After entering all the information, the system will automatically verify the database connection. If the connection is established, it will prompt you to analyze the database. We recommend performing the analysis (duration depends on the database size) to configure rules effectively.
 
 ## **Analyzing the Database**
 
