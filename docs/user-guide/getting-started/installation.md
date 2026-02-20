@@ -26,10 +26,10 @@ Ensure that all the necessary software is installed before proceeding with the i
 2.  For curl and lsof installation, execute the following commands based on your operating system:
 
     ```bash
-    ## For debian
+    ## For Debian
     sudo apt update && sudo apt install curl lsof
 
-    ## For alpine
+    ## For Alpine
     sudo apk add curl lsof
     ```
 3.  The next step involves installing the VeilDB Agent. Execute the following command:
@@ -54,7 +54,7 @@ Ensure that all the necessary software is installed before proceeding with the i
     ```bash
     dbvisor-agent app:server:add
     ```
-2. Enter your email, password and workspace code.
+2. Enter your email, password, and workspace code.
 3. Enter server name
 
 After you add a new server, you can set up a new Database. Go to [Database Management](../dbvisor-agent/database-management.md) to get more information on how to add and manage your databases.
@@ -63,19 +63,18 @@ After you add a new server, you can set up a new Database. Go to [Database Manag
 
 ## Client side
 
-The main requirements for this tool is PHP 8. It can be installed using the following command:
+You can download the latest version of the client from one of the links below:
 
-```bash
-sudo apt update && apt install php
-```
+* **Linux**: [https://veildb.com/download/veildb-linux-amd64-latest.zip](https://veildb.com/download/veildb-linux-amd64-latest.zip)
+* **Mac AMD:** [https://veildb.com/download/veildb-darwin-amd64-latest.zip](https://veildb.com/download/veildb-darwin-amd64-latest.zip)
+* **Mac ARM**: [https://veildb.com/download/veildb-darwin-arm64-latest.zip](https://veildb.com/download/veildb-darwin-arm64-latest.zip)
+* **Windows**: [https://veildb.com/download/veildb-windows-amd64-latest.zip](https://veildb.com/download/veildb-windows-amd64-latest.zip)
 
-Execute the following command to install the client-side version.
 
-```bash
-curl https://veildb.com/download/install | bash
-```
 
-After it is installed locally, you have to log in and enterthe  public key provided by your administrator (the person who has access to VeilDB Agent / to the server):
+
+
+
 
 * [How to generate keypair](../dbvisor-agent/generate-key-pairs.md)
 * [How to save locally public key](../dbvisor-client/save-public-key.md)
