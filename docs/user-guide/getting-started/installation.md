@@ -27,19 +27,19 @@ Ensure that all the necessary software is installed before proceeding with the i
 
     ```bash
     ## For Debian
-    sudo apt update && sudo apt install curl lsof
+    sudo apt update && sudo apt install curl lsof zip
 
     ## For Alpine
-    sudo apk add curl lsof
+    sudo apk add curl lsof zip
     ```
 3.  The next step involves installing the VeilDB Agent. Execute the following command:
 
     ```bash
     ## For alpine
-    curl https://veildb.com/download/dbvisor-agent-install | sh
+    curl https://veildb.com/download/veildb-agent-install | sh
 
     ## For debian
-    curl https://veildb.com/download/dbvisor-agent-install | bash
+    curl https://veildb.com/download/veildb-agent-install | bash
     source ~/.bashrc
     ```
 
